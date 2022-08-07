@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import increment from './services/counter';
 
 function App() {
   const helloElement = <h1>Hello world!</h1>;
@@ -12,6 +13,9 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         { helloElement }
+        <button onClick={incrementCount}>
+          Increment Count
+        </button>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -23,6 +27,11 @@ function App() {
       </header>
     </div>
   );
+}
+
+function incrementCount() {
+  const count = increment();
+  console.log("Count: " + count);
 }
 
 export default App;
