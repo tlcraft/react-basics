@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import increment from './services/counter';
+import React from 'react';
 
 function App() {
   const helloElement = <h1>Hello world!</h1>;
