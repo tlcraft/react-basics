@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import increment from './services/counter';
 import React, { useState } from 'react';
+import NameDisplay from './components/name-display';
 
 function App() {
   const helloElement = <h1>Hello world!</h1>;
@@ -33,6 +34,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <NameDisplay name="John Doe"></NameDisplay>
     </div>
   );
 }
