@@ -1,3 +1,9 @@
+# Resources
+
+- [React - Getting Started](https://reactjs.org/docs/getting-started.html)
+- [Eric Elliott - The Missing Introduction to React](https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76)
+- [Tania Rascia - React Tutorial: An Overview and Walkthrough](https://www.taniarascia.com/getting-started-with-react/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
