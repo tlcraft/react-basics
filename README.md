@@ -1,6 +1,7 @@
 # Resources
 
 - [React - Getting Started](https://reactjs.org/docs/getting-started.html)
+- [Scrimba - React Bootcamp Course](https://scrimba.com/playlist/p5gM9AG)
 - [Eric Elliott - The Missing Introduction to React](https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76)
 - [Tania Rascia - React Tutorial: An Overview and Walkthrough](https://www.taniarascia.com/getting-started-with-react/)
 
