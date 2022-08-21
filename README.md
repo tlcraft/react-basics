@@ -1,9 +1,13 @@
 # Resources
 
 - [React - Getting Started](https://reactjs.org/docs/getting-started.html)
-- [Scrimba - React Bootcamp Course](https://scrimba.com/playlist/p5gM9AG)
-- [Eric Elliott - The Missing Introduction to React](https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76)
-- [Tania Rascia - React Tutorial: An Overview and Walkthrough](https://www.taniarascia.com/getting-started-with-react/)
+- [React - Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [The Missing Introduction to React by Eric Elliott](https://medium.com/javascript-scene/the-missing-introduction-to-react-62837cb2fd76)
+- [A Complete Guide to useEffect by Dan Abramov](https://overreacted.io/a-complete-guide-to-useeffect/)
+- [React Tutorial: An Overview and Walkthrough by Tania Rascia](https://www.taniarascia.com/getting-started-with-react/)
+- [Scrimba - Learn React for free with Bob Ziroll](https://scrimba.com/learn/learnreact)
+- [ECMAScript Proposals](https://www.proposals.es/)
+
 
 # Getting Started with Create React App
 
