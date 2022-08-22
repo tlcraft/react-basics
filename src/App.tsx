@@ -3,11 +3,13 @@ import './App.css';
 import increment from './services/counter';
 import React, { useState } from 'react';
 import NameDisplay from './components/name-display';
+import List from './components/static/list';
 
 function App() {
   const helloElement = <h1>Hello world!</h1>;
   const [count, setCount] = useState(0);
-  
+  const list = ["one", "two"];
+
   return (
     <div className="App">
       <header className="App-header">
@@ -35,6 +37,7 @@ function App() {
         </a>
       </header>
       <NameDisplay name="John Doe"></NameDisplay>
+      <List items={list}></List>
     </div>
   );
 }
