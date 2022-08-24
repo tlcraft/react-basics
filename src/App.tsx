@@ -8,7 +8,7 @@ import List from './components/static/list';
 function App() {
   const helloElement = <h1>Hello world!</h1>;
   const [count, setCount] = useState(0);
-  const list = ["one", "two"];
+  const list = ["One", "Two"];
 
   return (
     <div className="App">
