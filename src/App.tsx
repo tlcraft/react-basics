@@ -10,6 +10,17 @@ function App() {
   const [count, setCount] = useState(0);
   const list = ["One", "Two"];
 
+  const nav = (
+    <nav>
+        <h1>website</h1>
+        <ul>
+            <li>Pricing</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+  )
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -38,6 +49,7 @@ function App() {
       </header>
       <NameDisplay name="John Doe"></NameDisplay>
       <List items={list}></List>
+      { nav }
     </div>
   );
 }
