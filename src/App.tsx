@@ -8,7 +8,7 @@ import List from './components/static/list';
 function App() {
   const helloElement = <h1>Hello world!</h1>;
   const [count, setCount] = useState(0);
-  const list = ["One", "Two"];
+  const list = ["Released in 2013", "Maintained by Meta (Facebook)", "Created by Jordan Walke"];
 
   const nav = (
     <nav>
@@ -48,7 +48,9 @@ function App() {
         </a>
       </header>
       <NameDisplay name="John Doe"></NameDisplay>
+      <h2>Fun Facts About React</h2>
       <List items={list}></List>
+      <p>Nav Example: </p>
       { nav }
     </div>
   );
