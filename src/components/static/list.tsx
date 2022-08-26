@@ -7,7 +7,7 @@ interface ListProps {
 function List(props: ListProps) {
     const { items } = props;
     const listItems = items.map((item) => <li>{item}</li>);
-    return <p>{listItems}</p>;
+    return <ul>{listItems}</ul>;
 }
 
 export default List;
