@@ -4,6 +4,8 @@ import increment from './services/counter';
 import React, { useState } from 'react';
 import NameDisplay from './components/name-display';
 import List from './components/static/list';
+import StaticPage from './static-page';
+import Footer from './components/static/footer';
 
 function App() {
   const helloElement = <h1>Hello world!</h1>;
@@ -24,7 +26,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <nav>
+          <img src={logo} className="App-logo" alt="logo" />
+        </nav>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -52,6 +56,8 @@ function App() {
       <List items={list}></List>
       <p>Nav Example: </p>
       { nav }
+      <StaticPage />
+      <Footer />
     </div>
   );
 }
