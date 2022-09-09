@@ -1,3 +1,4 @@
+import './body.css';
 import React, { useState } from 'react';
 import increment from '../../services/counter';
 import List from './list';
@@ -9,8 +10,8 @@ function Body() {
   
     const nav = (
       <nav>
-          <h1>website</h1>
-          <ul>
+          <h2>website</h2>
+          <ul className="nav-items">
               <li>Pricing</li>
               <li>About</li>
               <li>Contact</li>

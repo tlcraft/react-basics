@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav h2 {
+    padding: 10px;
+}
+
+.nav-items {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.nav-items > li {
+    padding: 20px;
+}
