@@ -9,7 +9,7 @@ function Body() {
     const list = ["Released in 2013", "Maintained by Meta (Facebook)", "Created by Jordan Walke"];
   
     const nav = (
-      <nav>
+      <nav className='main-nav'>
           <h2>website</h2>
           <ul className="nav-items">
               <li>Pricing</li>

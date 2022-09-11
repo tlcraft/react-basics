@@ -1,6 +1,7 @@
-nav {
+.main-nav {
     display: flex;
     justify-content: space-between;
+    box-shadow: 0px 8px 15px;
 }
 
 nav h2 {
