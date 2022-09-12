@@ -4,23 +4,37 @@ import React from 'react';
 
 function Header() {
     const helloElement = <h1>Hello world!</h1>;
+    const nav = (
+        <nav className='main-nav'>
+            <h2>website</h2>
+            <ul className="nav-items">
+                <li>Pricing</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    )
+
     return (
-        <header className="App-header">
-            <nav>
-                <img src={logo} className="App-logo" alt="logo" />
-            </nav>
-            <p>
-                Edit <code>src/App.js</code> and save to reload.
-            </p>
-            { helloElement }
-            <a  className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                >
-                Learn React
-            </a>
-        </header>
+        <>
+            { nav }
+            <header className="App-header">
+                <nav>
+                    <img src={logo} className="App-logo" alt="logo" />
+                </nav>
+                <p>
+                    Edit <code>src/App.js</code> and save to reload.
+                </p>
+                { helloElement }
+                <a  className="App-link"
+                    href="https://reactjs.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    Learn React
+                </a>
+            </header>
+        </>
     )
 }
 

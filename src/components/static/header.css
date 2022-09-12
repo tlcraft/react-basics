@@ -32,3 +32,23 @@
       transform: rotate(360deg);
     }
 }
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 8px 15px;
+}
+
+nav h2 {
+  padding: 10px;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.nav-items > li {
+  padding: 20px;
+}
