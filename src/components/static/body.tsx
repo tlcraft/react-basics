@@ -8,19 +8,9 @@ function Body() {
     const [count, setCount] = useState(0);
     const list = ["Released in 2013", "Maintained by Meta (Facebook)", "Created by Jordan Walke"];
   
-    const nav = (
-      <nav className='main-nav'>
-          <h2>website</h2>
-          <ul className="nav-items">
-              <li>Pricing</li>
-              <li>About</li>
-              <li>Contact</li>
-          </ul>
-      </nav>
-    )
     return (
         <>      
-            <button onClick={
+            <button className="counterButton" onClick={
                     () => {
                     const count = increment(); 
                     setCount(count);
@@ -32,8 +22,6 @@ function Body() {
             <NameDisplay name="John Doe"></NameDisplay>
             <h2>Fun Facts About React</h2>
             <List items={list}></List>
-            <p>Nav Example: </p>
-            { nav }
         </>
     )
 }
