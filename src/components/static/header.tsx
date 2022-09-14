@@ -6,7 +6,7 @@ function Header() {
     const helloElement = <h1>Hello world!</h1>;
     const nav = (
         <nav className='main-nav'>
-            <h2>website</h2>
+            <img src={logo} className="App-logo" alt="logo" />
             <ul className="nav-items">
                 <li>Pricing</li>
                 <li>About</li>
@@ -19,9 +19,6 @@ function Header() {
         <>
             { nav }
             <header className="App-header">
-                <nav>
-                    <img src={logo} className="App-logo" alt="logo" />
-                </nav>
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
