@@ -1,3 +1,4 @@
+import './static-page.css';
 import React from 'react';
 
 function StaticPage() {

@@ -1,3 +1,4 @@
+import './list.css';
 import React from 'react';
 
 interface ListProps {
