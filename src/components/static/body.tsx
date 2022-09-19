@@ -9,7 +9,7 @@ function Body() {
     const list = ["Released in 2013", "Maintained by Meta (Facebook)", "Created by Jordan Walke"];
   
     return (
-        <>      
+        <main>      
             <button className="counterButton" onClick={
                     () => {
                     const count = increment(); 
@@ -22,7 +22,7 @@ function Body() {
             <NameDisplay name="John Doe"></NameDisplay>
             <h2>Fun Facts About React</h2>
             <List items={list}></List>
-        </>
+        </main>
     )
 }
 
