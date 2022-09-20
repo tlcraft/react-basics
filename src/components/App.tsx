@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
-import Body from './components/static/body';
-import Footer from './components/static/footer';
-import Header from './components/static/header';
+import Body from './static/body';
+import Footer from './static/footer';
+import Header from './static/header';
 import StaticPage from './static-page';
 
 function App() {
