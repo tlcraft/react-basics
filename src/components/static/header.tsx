@@ -7,7 +7,7 @@ function Header() {
     const nav = (
         <nav className='main-nav'>
             <img src={logo} className="App-logo" alt="logo" />
-            <h3 className="header-title">React Facts</h3>
+            <h3>React Facts</h3>
             <ul className="nav-items">
                 <li>Pricing</li>
                 <li>About</li>

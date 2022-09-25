@@ -58,7 +58,7 @@ nav h2 {
   padding: 20px;
 }
 
-.header-title {
+nav > h3 {
   margin-right: auto;
   padding-top: 15px;
 }
