@@ -1,7 +1,7 @@
 import './body.css';
 import React, { useState } from 'react';
 import increment from '../../services/counter';
-import List from './list';
+import UnorderedList from './unordered-list';
 import NameDisplay from '../../components/name-display';
 
 function Body() {
@@ -21,7 +21,7 @@ function Body() {
             <p>{count}</p>
             <NameDisplay name="John Doe"></NameDisplay>
             <h2>Fun Facts About React</h2>
-            <List items={list}></List>
+            <UnorderedList items={list}></UnorderedList>
         </main>
     )
 }
