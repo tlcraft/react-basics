@@ -1,3 +1,9 @@
-ul {
+.container {
+    text-align: center;
+}
+
+.container > ul {
+    display: inline-block;
     list-style-position: inside;
+    text-align: left;
 }

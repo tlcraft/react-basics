@@ -8,7 +8,7 @@ interface ListProps {
 function UnorderedList(props: ListProps) {
     const { items } = props;
     const listItems = items.map((item, i) => <li key={i}>{item}</li>);
-    return <ul>{listItems}</ul>;
+    return <div className="container"><ul>{listItems}</ul></div>;
 }
 
 export default UnorderedList;
