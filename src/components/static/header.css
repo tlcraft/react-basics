@@ -40,6 +40,10 @@
   box-shadow: 0px 8px 15px;
 }
 
+nav {
+  display: flex;
+}
+
 nav h2 {
   padding: 10px;
 }
@@ -48,8 +52,14 @@ nav h2 {
   display: flex;
   list-style: none;
   justify-content: space-between;
+  font-weight: 600;
 }
 
 .nav-items > li {
   padding: 20px;
+}
+
+nav > h3 {
+  margin-right: auto;
+  padding-top: 15px;
 }

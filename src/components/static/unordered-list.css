@@ -1,0 +1,10 @@
+ul {
+    display: inline-block;
+    list-style-position: inside;
+    text-align: left;
+}
+
+ul > li::marker {
+    color: #61DAFB;
+    font-size: 1.2em;
+}
