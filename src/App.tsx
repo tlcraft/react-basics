@@ -4,6 +4,7 @@ import Body from './components/static/body';
 import Footer from './components/static/footer';
 import Header from './components/static/header';
 import StaticPage from './components/static-page';
+import BusinessCard from './components/business-card';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Body />
       <StaticPage />
+      <BusinessCard />
       <Footer />
     </div>
   );
