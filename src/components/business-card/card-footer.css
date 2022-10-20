@@ -3,6 +3,11 @@
     justify-content: center;
 }
 
-.profiles > svg {
+.profiles > a {
     margin: 10px;
+    color: black;
+}
+
+.profiles > a:hover {
+    color: #61dafb;
 }
