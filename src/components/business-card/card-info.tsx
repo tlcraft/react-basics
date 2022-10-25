@@ -1,7 +1,12 @@
 import React from 'react';
 
 function CardInfo() {
-    return <p>Info</p>;
+    return (
+        <div>
+            <p>Dev Name</p>
+            <p>Position Title</p>
+        </div> 
+    );
 }
 
 export default CardInfo;
