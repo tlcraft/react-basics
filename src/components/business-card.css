@@ -1,4 +1,7 @@
 .business-card {
     max-width: 500px;
     margin: auto;
+    padding: 10px;
+    background-color: darkgray;
+    border-radius: 10px;
 }
