@@ -1,11 +1,14 @@
 .profiles {
     display: flex;
     justify-content: center;
+    background-color: #222222;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .profiles > a {
     margin: 10px;
-    color: black;
+    color: #767676;
 }
 
 .profiles > a:hover {
