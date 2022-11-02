@@ -4,7 +4,7 @@ import React from 'react';
 function CardInfo() {
     return (
         <div>
-            <img src='../../nubelson-fernandes-UcYBL5V0xWQ-unsplash.jpg' />
+            <img className="profileImage" src='../../nubelson-fernandes-UcYBL5V0xWQ-unsplash.jpg' />
             <p>Name</p>
             <p>Position Title</p>
         </div> 
