@@ -2,16 +2,22 @@ import './header.css';
 import logo from '../../logo.svg';
 import React from 'react';
 
-function Header() {
+interface HeaderProps {
+    navigateToStaticPage: () => void;
+    navigateToBody: () => void;
+    navigateToCard: () => void;
+}
+
+function Header(props: HeaderProps) {
     const helloElement = <h1>Hello world!</h1>;
     const nav = (
         <nav className='main-nav'>
             <img src={logo} className="App-logo" alt="logo" />
             <h3>React Facts</h3>
             <ul className="nav-items">
-                <li>Pricing</li>
-                <li>About</li>
-                <li>Contact</li>
+                <li onClick={props.navigateToStaticPage}>Static Page</li>
+                <li onClick={props.navigateToBody}>Body</li>
+                <li onClick={props.navigateToCard}>Business Card</li>
             </ul>
         </nav>
     )
