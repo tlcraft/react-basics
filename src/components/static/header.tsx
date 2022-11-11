@@ -9,8 +9,7 @@ interface HeaderProps {
 }
 
 function Header(props: HeaderProps) {
-    const helloElement = <h1>Hello world!</h1>;
-    const nav = (
+    return (
         <nav className='main-nav'>
             <img src={logo} className="App-logo" alt="logo" />
             <h3>React Facts</h3>
@@ -20,25 +19,6 @@ function Header(props: HeaderProps) {
                 <li onClick={props.navigateToCard}>Business Card</li>
             </ul>
         </nav>
-    )
-
-    return (
-        <>
-            { nav }
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                { helloElement }
-                <a  className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                    Learn React
-                </a>
-            </header>
-        </>
     )
 }
 
