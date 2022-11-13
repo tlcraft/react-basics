@@ -2,8 +2,22 @@ import './static-page.css';
 import React from 'react';
 
 function StaticPage() {
+    const helloElement = <h1>Hello world!</h1>;
     return (
         <>  
+            <header className="App-header">
+                <p>
+                    Edit <code>src/App.js</code> and save to reload.
+                </p>
+                { helloElement }
+                <a  className="App-link"
+                    href="https://reactjs.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    Learn React
+                </a>
+            </header>
             <h2>Reasons why I'm excited to learn React:</h2>
             <ol>
                 <li>React is popular</li>
