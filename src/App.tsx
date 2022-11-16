@@ -6,6 +6,7 @@ import Header from './components/static/header';
 import StaticPage from './components/static-page';
 import BusinessCard from './components/business-card';
 import {Routes, Route, useNavigate} from 'react-router-dom';
+import VrboNav from './components/vrbo/vrbo-nav';
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
   const headerProps = {
     navigateToStaticPage: navigateToStaticPage,
     navigateToBody: navigateToBody,
-    navigateToCard: navigateToCard
+    navigateToCard: navigateToCard,
+    navigateToVrbo: () => { navigate('/vrbo')}
   };
 
   return (
@@ -36,6 +38,7 @@ function App() {
             <Route path="/" element={<StaticPage />} />
             <Route path="/card" element={<BusinessCard />} />
             <Route path="/body" element={<Body />} />
+            <Route path="/vrbo" element={<VrboNav />} />
         </Routes>
         <Footer />
       </div>
