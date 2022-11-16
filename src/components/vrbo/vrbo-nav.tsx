@@ -3,7 +3,7 @@ import React from 'react';
 
 function VrboNav() {
     return (
-        <nav>
+        <nav className="vrbo-nav">
             VRBO
         </nav>
     )
