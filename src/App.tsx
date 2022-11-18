@@ -12,23 +12,12 @@ import VrboNav from './components/vrbo/vrbo-nav';
 function App() {
 
   const navigate = useNavigate();
-  const navigateToStaticPage = () => {
-      navigate('/');
-  };
-
-  const navigateToBody = () => {
-    navigate('/body');
-  }
-
-  const navigateToCard = () => {
-    navigate('/card');
-  };
 
   const headerProps = {
-    navigateToStaticPage: navigateToStaticPage,
-    navigateToBody: navigateToBody,
-    navigateToCard: navigateToCard,
-    navigateToVrbo: () => { navigate('/vrbo')}
+    navigateToStaticPage: () => navigate('/'),
+    navigateToBody: () => navigate('/body'),
+    navigateToCard: () => navigate('/card'),
+    navigateToVrbo: () => navigate('/vrbo')
   };
 
   return (
