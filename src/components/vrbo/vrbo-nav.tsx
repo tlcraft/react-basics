@@ -4,7 +4,7 @@ import React from 'react';
 function VrboNav() {
     return (
         <nav className="vrbo-nav">
-            VRBO
+            <img className="vrbo-logo" src="../../airbnb_logo.png" />
         </nav>
     )
 }
