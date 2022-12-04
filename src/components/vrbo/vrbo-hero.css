@@ -1,4 +1,7 @@
 .vrbo-hero {
+    padding: 20px;
+    margin: auto;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
 }
