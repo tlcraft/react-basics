@@ -5,8 +5,8 @@ function VrboHero() {
     return (
         <section className="vrbo-hero">
             <img className="hero-photo" src="../../hero.png" />
-            <h1>Online Experiences</h1>
-            <p>Join unique interactive activities all without leaving home.</p>
+            <h1 className="hero-header">Online Experiences</h1>
+            <p className="hero-text">Join unique interactive activities all without leaving home.</p>
         </section>
     )
 }

@@ -9,3 +9,11 @@
     align-self: center;
     max-width: 450px;
 }
+
+.hero-header {
+    margin-bottom: 16px;
+}
+
+.hero-text {
+    margin-top: 0;
+}
