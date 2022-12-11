@@ -3,10 +3,12 @@
     display: flex;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
+    align-items: flex-start;
+    max-width: 450px;
+    margin: auto;
 }
 
 .hero-photo {
-    align-self: center;
     max-width: 450px;
 }
 
