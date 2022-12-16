@@ -83,5 +83,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Resources
 
 Developer photo by <a href="https://unsplash.com/@nublson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nubelson Fernandes</a> on <a href="https://unsplash.com/s/photos/developer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-[Hero photo source](https://scrimba-airbnb-page.vercel.app/static/media/hero.8f80300d4cddb242d9cd.png)
+
+VRBO Photo Reference:  
+- [Hero photo source](https://scrimba-airbnb-page.vercel.app/static/media/hero.8f80300d4cddb242d9cd.png)
+- [Katie Zaferes source](https://scrimba-airbnb-page.vercel.app/static/media/katie-zaferes.4dcb2224d553ccd977a4.png)
+- [Wedding Photo source](https://scrimba-airbnb-page.vercel.app/static/media/wedding-photography.de6d8e47cc4f6902350d.png)
+- [Mountain Bike source](https://scrimba-airbnb-page.vercel.app/static/media/mountain-biking.4a10cddcb175d2ec7128.png)
