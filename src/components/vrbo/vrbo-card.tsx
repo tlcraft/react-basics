@@ -1,13 +1,18 @@
+import './vrbo-card.css';
 import React from 'react';
 
 function VrboCard() {
     return (
-        <section className="vrbo-card">
+        <div className="vrbo-card">
             <img className="card-photo" src="../../katie-zaferes.png" alt='Katie Zaferes'/>
-            <div>Rating</div>
-            <h1 className="card-description">Life lessons with Katie Zaferes</h1>
+            <div className="card-stats">
+                <span>5.0</span>
+                <span>(6) • </span>
+                <span>USA</span>
+            </div>
+            <p className="card-description">Life lessons with Katie Zaferes</p>
             <p className="card-price"><span className="price">From $136</span><span>/ person</span></p>
-        </section>
+        </div>
     )
 }
 
