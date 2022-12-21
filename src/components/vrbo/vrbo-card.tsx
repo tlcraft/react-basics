@@ -6,6 +6,7 @@ function VrboCard() {
         <div className="vrbo-card">
             <img className="card-photo" src="../../katie-zaferes.png" alt='Katie Zaferes'/>
             <div className="card-stats">
+                <img src="../../star.png" />
                 <span>5.0</span>
                 <span>(6) • </span>
                 <span>USA</span>
