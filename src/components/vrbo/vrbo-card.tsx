@@ -8,8 +8,8 @@ function VrboCard() {
             <div className="card-stats">
                 <img className="card-star" src="../../star.png" alt="star icon" />
                 <span>5.0</span>
-                <span>(6) • </span>
-                <span>USA</span>
+                <span className="gray">(6) • </span>
+                <span className="gray">USA</span>
             </div>
             <p className="card-description">Life lessons with Katie Zaferes</p>
             <p className="card-price"><span className="price">From $136</span><span>/ person</span></p>
