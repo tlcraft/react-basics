@@ -22,3 +22,7 @@ code {
 .gray {
   color: gray;
 }
+
+.bold {
+  font-weight: bold;
+}
