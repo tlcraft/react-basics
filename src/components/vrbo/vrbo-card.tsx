@@ -11,8 +11,8 @@ function VrboCard() {
                 <span className="gray">(6) • </span>
                 <span className="gray">USA</span>
             </div>
-            <p className="card-description">Life lessons with Katie Zaferes</p>
-            <p className="card-price"><span className="price">From $136</span><span>/ person</span></p>
+            <p>Life lessons with Katie Zaferes</p>
+            <p><span className="bold">From $136</span><span>/ person</span></p>
         </div>
     )
 }
