@@ -1,18 +1,19 @@
 import './vrbo-card.css';
 import React from 'react';
+import { CardProps } from './vrbo-card-props';
 
-function VrboCard() {
+function VrboCard(props: CardProps) {
     return (
         <div className="vrbo-card">
-            <img className="card-photo" src="../../katie-zaferes.png" alt='Katie Zaferes'/>
+            <img className="card-photo" src={props.imageSource} alt={props.alternateText} />
             <div className="card-stats">
                 <img className="card-star" src="../../star.png" alt="star icon" />
-                <span>5.0</span>
-                <span className="gray">(6) • </span>
-                <span className="gray">USA</span>
+                <span>{props.rating}</span>
+                <span className="gray">({props.ratingCount}) • </span>
+                <span className="gray">{props.country}</span>
             </div>
-            <p>Life lessons with Katie Zaferes</p>
-            <p><span className="bold">From $136</span><span>/ person</span></p>
+            <p>{props.title}</p>
+            <p><span className="bold">From {props.price}</span><span>/ person</span></p>
         </div>
     )
 }
