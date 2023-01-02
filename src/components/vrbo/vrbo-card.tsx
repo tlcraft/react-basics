@@ -13,7 +13,7 @@ function VrboCard(props: CardProps) {
                 <span className="gray">{props.country}</span>
             </div>
             <p>{props.title}</p>
-            <p><span className="bold">From {props.price}</span><span>/ person</span></p>
+            <p><span className="bold">From {props.price}</span><span> / person</span></p>
         </div>
     )
 }
