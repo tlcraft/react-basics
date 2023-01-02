@@ -5,7 +5,7 @@ import VrboNav from './vrbo-nav';
 import { CardProps } from './vrbo-card-props';
 
 function Vrbo() {
-    const cardProps: CardProps = {
+    const katieCardProps: CardProps = {
         imageSource: "../../katie-zaferes.png",
         alternateText: "Katie Zaferes",
         rating: "5.0",
@@ -15,11 +15,22 @@ function Vrbo() {
         price: "$136"
     };
 
+    const weddingCardProps: CardProps = {
+        imageSource: "../../wedding-photography.png",
+        alternateText: "Woman in wedding gown",
+        rating: "5.0",
+        ratingCount: 30,
+        country: "USA",
+        title: "Learn wedding photography",
+        price: "$125"
+    };
+
     return (
         <>
             <VrboNav />
             <VrboHero />
-            <VrboCard {...cardProps } />
+            <VrboCard {...katieCardProps } />
+            <VrboCard {...weddingCardProps } />
         </>
     )
 }
