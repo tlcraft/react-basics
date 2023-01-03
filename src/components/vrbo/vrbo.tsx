@@ -1,3 +1,4 @@
+import './vrbo.css';
 import React from 'react';
 import VrboCard from './vrbo-card';
 import VrboHero from './vrbo-hero';
@@ -29,8 +30,10 @@ function Vrbo() {
         <>
             <VrboNav />
             <VrboHero />
-            <VrboCard {...katieCardProps } />
-            <VrboCard {...weddingCardProps } />
+            <div className="cards">
+                <VrboCard {...katieCardProps } />
+                <VrboCard {...weddingCardProps } />
+            </div>
         </>
     )
 }
