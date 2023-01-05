@@ -26,6 +26,16 @@ function Vrbo() {
         price: "$125"
     };
 
+    const mountainBikingCardProps: CardProps = {
+        imageSource: "../../mountain-biking.png",
+        alternateText: "A mountain bike",
+        rating: "4.8",
+        ratingCount: 2,
+        country: "USA",
+        title: "Group Mountain Biking",
+        price: "$50"
+    };
+
     return (
         <>
             <VrboNav />
@@ -33,6 +43,7 @@ function Vrbo() {
             <div className="cards">
                 <VrboCard {...katieCardProps } />
                 <VrboCard {...weddingCardProps } />
+                <VrboCard {...mountainBikingCardProps } />
             </div>
         </>
     )
