@@ -5,6 +5,8 @@
 
 .card-photo {
     width: 200px;
+    height: 275px;
+    border-radius: 10px;
 }
 
 .card-stats {
