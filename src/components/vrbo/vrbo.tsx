@@ -36,14 +36,15 @@ function Vrbo() {
         price: "$50"
     };
 
+    const cardProps = [katieCardProps, weddingCardProps, mountainBikingCardProps];
+    const cards = cardProps.map(props => <VrboCard {...props} />);
+
     return (
         <>
             <VrboNav />
             <VrboHero />
             <div className="cards">
-                <VrboCard {...katieCardProps } />
-                <VrboCard {...weddingCardProps } />
-                <VrboCard {...mountainBikingCardProps } />
+                { cards }
             </div>
         </>
     )
