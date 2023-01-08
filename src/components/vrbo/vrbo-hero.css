@@ -1,0 +1,21 @@
+.vrbo-hero {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    align-items: flex-start;
+    max-width: 450px;
+    margin: auto;
+}
+
+.hero-photo {
+    max-width: 450px;
+}
+
+.hero-header {
+    margin-bottom: 16px;
+}
+
+.hero-text {
+    margin-top: 0;
+}

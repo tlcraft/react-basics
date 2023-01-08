@@ -1,0 +1,20 @@
+.vrbo-card {
+    margin: auto;
+    font-size: 12px;
+}
+
+.card-photo {
+    width: 200px;
+    height: 275px;
+    border-radius: 10px;
+}
+
+.card-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-star {
+    height: 10px;
+}

@@ -6,6 +6,7 @@ interface HeaderProps {
     navigateToStaticPage: () => void;
     navigateToBody: () => void;
     navigateToCard: () => void;
+    navigateToVrbo: () => void;
 }
 
 function Header(props: HeaderProps) {
@@ -17,6 +18,7 @@ function Header(props: HeaderProps) {
                 <li onClick={props.navigateToStaticPage}>Static Page</li>
                 <li onClick={props.navigateToBody}>Body</li>
                 <li onClick={props.navigateToCard}>Business Card</li>
+                <li onClick={props.navigateToVrbo}>VRBO</li>
             </ul>
         </nav>
     )
