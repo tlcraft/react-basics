@@ -43,9 +43,9 @@ function Vrbo() {
         <>
             <VrboNav />
             <VrboHero />
-            <div className="cards">
+            <section className="cards">
                 { cards }
-            </div>
+            </section>
         </>
     )
 }
