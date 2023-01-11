@@ -37,7 +37,7 @@ function Vrbo() {
     };
 
     const cardProps = [katieCardProps, weddingCardProps, mountainBikingCardProps];
-    const cards = cardProps.map(props => <VrboCard {...props} />);
+    const cards = cardProps.map((props, index) => <VrboCard key={index} {...props} />);
 
     return (
         <>
