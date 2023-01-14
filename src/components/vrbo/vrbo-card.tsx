@@ -5,6 +5,7 @@ import { CardProps } from './vrbo-card-props';
 function VrboCard(props: CardProps) {
     return (
         <div className="vrbo-card">
+            { props.openSpots === 0 && <div className="badge">SOLD OUT</div> }
             <img className="card-photo" src={props.imageSource} alt={props.alternateText} />
             <div className="card-stats">
                 <img className="card-star" src="../../star.png" alt="star icon" />
