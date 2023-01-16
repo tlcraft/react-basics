@@ -7,4 +7,5 @@ export interface CardProps {
     title: string;
     price: string;
     openSpots: number;
+    location: string;
 }
