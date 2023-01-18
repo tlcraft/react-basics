@@ -10,8 +10,8 @@ function VrboCard(props: CardProps) {
             <img className="card-photo" src={props.imageSource} alt={props.alternateText} />
             <div className="card-stats">
                 <img className="card-star" src="../../star.png" alt="star icon" />
-                <span>{props.rating}</span>
-                <span className="gray">({props.ratingCount}) · </span>
+                <span>&nbsp;{props.rating}&nbsp;</span>
+                <span className="gray">({props.ratingCount}) ·&nbsp;</span>
                 <span className="gray">{props.country}</span>
             </div>
             <p>{props.title}</p>
