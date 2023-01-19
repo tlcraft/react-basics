@@ -6,4 +6,6 @@ export interface CardProps {
     country: string;
     title: string;
     price: string;
+    openSpots: number;
+    location: string;
 }

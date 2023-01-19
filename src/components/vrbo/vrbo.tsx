@@ -13,7 +13,9 @@ function Vrbo() {
         ratingCount: 6,
         country: "USA",
         title: "Life lessons with Katie Zaferes",
-        price: "$136"
+        price: "$136",
+        openSpots: 0,
+        location: "Online"
     };
 
     const weddingCardProps: CardProps = {
@@ -23,7 +25,9 @@ function Vrbo() {
         ratingCount: 30,
         country: "USA",
         title: "Learn wedding photography",
-        price: "$125"
+        price: "$125",
+        openSpots: 2,
+        location: "Online"
     };
 
     const mountainBikingCardProps: CardProps = {
@@ -33,7 +37,9 @@ function Vrbo() {
         ratingCount: 2,
         country: "USA",
         title: "Group Mountain Biking",
-        price: "$50"
+        price: "$50",
+        openSpots: 10,
+        location: "In Person"
     };
 
     const cardProps = [katieCardProps, weddingCardProps, mountainBikingCardProps];
