@@ -5,7 +5,7 @@ function StaticPage() {
     const helloElement = <h1>Hello world!</h1>;
     return (
         <>  
-            <header className="App-header">
+            <div className="App-banner">
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
@@ -17,7 +17,7 @@ function StaticPage() {
                     >
                     Learn React
                 </a>
-            </header>
+            </div>
             <h2>Reasons why I'm excited to learn React:</h2>
             <ol>
                 <li>React is popular</li>

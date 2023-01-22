@@ -13,7 +13,7 @@ function Header(props: HeaderProps) {
     return (
         <nav className='main-nav'>
             <img src={logo} className="App-logo" alt="logo" />
-            <h3>React Facts</h3>
+            <h3>React Sample App</h3>
             <ul className="nav-items">
                 <li onClick={props.navigateToStaticPage}>Static Page</li>
                 <li onClick={props.navigateToBody}>Body</li>
