@@ -7,6 +7,7 @@ interface HeaderProps {
     navigateToBody: () => void;
     navigateToCard: () => void;
     navigateToVrbo: () => void;
+    navigateToMeme: () => void;
 }
 
 function Header(props: HeaderProps) {
@@ -19,6 +20,7 @@ function Header(props: HeaderProps) {
                 <li onClick={props.navigateToBody}>Body</li>
                 <li onClick={props.navigateToCard}>Business Card</li>
                 <li onClick={props.navigateToVrbo}>VRBO</li>
+                <li onClick={props.navigateToMeme}>Meme</li>
             </ul>
         </nav>
     )
