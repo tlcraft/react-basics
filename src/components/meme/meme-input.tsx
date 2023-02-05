@@ -1,3 +1,4 @@
+import './meme-input.css';
 import React from 'react';
 
 function MemeInput() {
