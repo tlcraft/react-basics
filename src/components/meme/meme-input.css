@@ -1,10 +1,11 @@
 .meme-input-form {    
     display: grid;
     grid-template: 40px 40px / 1fr 1fr;
+    margin: 15px;
+    gap: 15px;
 } 
 
-input { 
-    margin: 10px;
+input {
     padding: 5px;
 }
 
