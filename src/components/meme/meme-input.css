@@ -6,7 +6,9 @@
 } 
 
 input {
-    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
 }
 
 button {
@@ -14,4 +16,6 @@ button {
     border-radius: 5px;
     color: white;
     grid-column: 1 / -1;
+    border: none;
+    cursor: pointer;
 }
