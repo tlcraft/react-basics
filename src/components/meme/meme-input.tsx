@@ -1,5 +1,6 @@
 import './meme-input.css';
 import React from 'react';
+import memeData from './meme-data';
 
 function MemeInput() {
     return (
@@ -12,7 +13,8 @@ function MemeInput() {
 }
 
 function getNewImage(): void {
-    console.log("Clicked button.");
+    const random = Math.floor(Math.random() * memeData.data.memes.length);
+    console.log(random, memeData.data.memes[random]);
 }
 
 export default MemeInput;
