@@ -11,7 +11,7 @@ input {
     text-indent: 5px;
 }
 
-button {
+.new-image-btn {
     background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
     border-radius: 5px;
     color: white;

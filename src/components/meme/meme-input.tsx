@@ -9,7 +9,7 @@ function MemeInput() {
         <div className="meme-input-form">
             <input type="text" id="upper-text" placeholder="Upper text" name="upper-text" />
             <input type="text" id="lower-text" placeholder="Lower text" name="lower-text" />
-            <button type="button" onClick={() => setImageUrl(getNewImageUrl)}>Get a new image</button>
+            <button type="button" onClick={() => setImageUrl(getNewImageUrl)} className="new-image-btn">Get a new image</button>
             <img className="meme-image" src={imageUrl} alt="A random meme image" />
         </div>
     )
