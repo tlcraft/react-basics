@@ -19,3 +19,8 @@ input {
     border: none;
     cursor: pointer;
 }
+
+.meme-image {
+    width: 450px;
+    margin: auto;
+}
