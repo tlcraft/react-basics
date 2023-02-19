@@ -6,7 +6,7 @@ function MemeInput() {
     const [imageUrl, setImageUrl] = useState(getNewImageUrl());
     const [upperText, setUpperText] = useState('');
     const [lowerText, setLowerText] = useState('');
-    
+
     return (
         <>
             <div className="meme-input-form">
@@ -15,6 +15,8 @@ function MemeInput() {
                 <button type="button" onClick={() => setImageUrl(getNewImageUrl)} className="new-image-btn">Get a new image</button>
             </div>
             <img className="meme-image" src={imageUrl} alt="A random meme image" />
+            <p className="meme-text">{upperText}</p>
+            <p className="meme-text">{lowerText}</p>
         </>
     )
 }

@@ -24,3 +24,19 @@ input {
     width: 450px;
     margin: auto;
 }
+
+.meme-text {
+    font-family: impact;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0px 2px 0 #000,
+        2px 0px 0 #000,
+        0px -2px 0 #000,
+        -2px 0px 0 #000,
+        2px 2px 5px #000;
+}
