@@ -26,6 +26,8 @@ input {
 }
 
 .meme-text {
+    position: absolute;
+    left: 50%;
     font-family: impact;
     text-transform: uppercase;
     color: white;
@@ -39,4 +41,16 @@ input {
         0px -2px 0 #000,
         -2px 0px 0 #000,
         2px 2px 5px #000;
+}
+
+.meme-container {
+    position: relative;
+}
+
+.upper-text {
+    top: 0;
+}
+
+.lower-text {
+    bottom: 0;
 }

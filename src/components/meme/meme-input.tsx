@@ -14,9 +14,11 @@ function MemeInput() {
                 <input type="text" id="lower-text" placeholder="Lower text" name="lower-text" onChange={(e) => {setLowerText(e.target.value)}}/>
                 <button type="button" onClick={() => setImageUrl(getNewImageUrl)} className="new-image-btn">Get a new image</button>
             </div>
-            <img className="meme-image" src={imageUrl} alt="A random meme image" />
-            <p className="meme-text">{upperText}</p>
-            <p className="meme-text">{lowerText}</p>
+            <div className="meme-container">
+                <img className="meme-image" src={imageUrl} alt="A random meme image" />
+                <p className="meme-text upper-text">{upperText}</p>
+                <p className="meme-text lower-text">{lowerText}</p>
+            </div>
         </>
     )
 }
