@@ -29,6 +29,7 @@ input {
     position: absolute;
     left: 50%;
     font-family: impact;
+    font-size: 35px;
     text-transform: uppercase;
     color: white;
     letter-spacing: 1px;
