@@ -1,11 +1,12 @@
 import React from 'react';
 import MemeHeader from './meme-header';
+import MemeInput from './meme-input';
 
 function Meme() {
     return (
         <>
             <MemeHeader />
-            <p>Meme placeholder</p>
+            <MemeInput />
         </>
     )
 }
