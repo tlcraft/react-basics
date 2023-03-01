@@ -3,22 +3,6 @@ const memeData = {
     "data": {
         "memes": [
             {
-                "id": "181913649",
-                "name": "Drake Hotline Bling",
-                "url": "https://i.imgflip.com/30b1gx.jpg",
-                "width": 1200,
-                "height": 1200,
-                "box_count": 2
-            },
-            {
-                "id": "87743020",
-                "name": "Two Buttons",
-                "url": "https://i.imgflip.com/1g8my4.jpg",
-                "width": 600,
-                "height": 908,
-                "box_count": 3
-            },
-            {
                 "id": "112126428",
                 "name": "Distracted Boyfriend",
                 "url": "https://i.imgflip.com/1ur9b0.jpg",
@@ -51,35 +35,11 @@ const memeData = {
                 "box_count": 2
             },
             {
-                "id": "124822590",
-                "name": "Left Exit 12 Off Ramp",
-                "url": "https://i.imgflip.com/22bdq6.jpg",
-                "width": 804,
-                "height": 767,
-                "box_count": 3
-            },
-            {
                 "id": "222403160",
                 "name": "Bernie I Am Once Again Asking For Your Support",
                 "url": "https://i.imgflip.com/3oevdk.jpg",
                 "width": 750,
                 "height": 750,
-                "box_count": 2
-            },
-            {
-                "id": "438680",
-                "name": "Batman Slapping Robin",
-                "url": "https://i.imgflip.com/9ehk.jpg",
-                "width": 400,
-                "height": 387,
-                "box_count": 2
-            },
-            {
-                "id": "188390779",
-                "name": "Woman Yelling At Cat",
-                "url": "https://i.imgflip.com/345v97.jpg",
-                "width": 680,
-                "height": 438,
                 "box_count": 2
             },
             {
@@ -128,14 +88,6 @@ const memeData = {
                 "url": "https://i.imgflip.com/46e43q.png",
                 "width": 960,
                 "height": 540,
-                "box_count": 2
-            },
-            {
-                "id": "178591752",
-                "name": "Tuxedo Winnie The Pooh",
-                "url": "https://i.imgflip.com/2ybua0.png",
-                "width": 800,
-                "height": 582,
                 "box_count": 2
             },
             {
@@ -259,14 +211,6 @@ const memeData = {
                 "box_count": 3
             },
             {
-                "id": "21735",
-                "name": "The Rock Driving",
-                "url": "https://i.imgflip.com/grr.jpg",
-                "width": 568,
-                "height": 700,
-                "box_count": 2
-            },
-            {
                 "id": "61520",
                 "name": "Futurama Fry",
                 "url": "https://i.imgflip.com/1bgw.jpg",
@@ -280,22 +224,6 @@ const memeData = {
                 "url": "https://i.imgflip.com/392xtu.jpg",
                 "width": 822,
                 "height": 960,
-                "box_count": 2
-            },
-            {
-                "id": "161865971",
-                "name": "Marked Safe From",
-                "url": "https://i.imgflip.com/2odckz.jpg",
-                "width": 618,
-                "height": 499,
-                "box_count": 2
-            },
-            {
-                "id": "132769734",
-                "name": "Hard To Swallow Pills",
-                "url": "https://i.imgflip.com/271ps6.jpg",
-                "width": 680,
-                "height": 979,
                 "box_count": 2
             },
             {
@@ -496,14 +424,6 @@ const memeData = {
                 "url": "https://i.imgflip.com/8p0a.jpg",
                 "width": 500,
                 "height": 617,
-                "box_count": 2
-            },
-            {
-                "id": "183518946",
-                "name": "Blank Transparent Square",
-                "url": "https://i.imgflip.com/319g4i.png",
-                "width": 1000,
-                "height": 1000,
                 "box_count": 2
             },
             {
