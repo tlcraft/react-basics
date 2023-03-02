@@ -27,14 +27,6 @@ const memeData = {
                 "box_count": 4
             },
             {
-                "id": "129242436",
-                "name": "Change My Mind",
-                "url": "https://i.imgflip.com/24y43o.jpg",
-                "width": 482,
-                "height": 361,
-                "box_count": 2
-            },
-            {
                 "id": "222403160",
                 "name": "Bernie I Am Once Again Asking For Your Support",
                 "url": "https://i.imgflip.com/3oevdk.jpg",
@@ -312,14 +304,6 @@ const memeData = {
                 "url": "https://i.imgflip.com/1bhm.jpg",
                 "width": 622,
                 "height": 477,
-                "box_count": 2
-            },
-            {
-                "id": "29617627",
-                "name": "Look At Me",
-                "url": "https://i.imgflip.com/hmt3v.jpg",
-                "width": 300,
-                "height": 300,
                 "box_count": 2
             },
             {
