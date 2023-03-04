@@ -1,0 +1,17 @@
+.meme-header {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    padding: 20px;
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    color: white;
+}
+
+.meme-title {
+    margin-right: auto;
+}
+
+.meme-project {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
