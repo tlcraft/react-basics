@@ -21,8 +21,7 @@ input {
 }
 
 .meme-image {
-    width: 450px;
-    margin: auto;
+    width: 100%;
 }
 
 .meme-text {
