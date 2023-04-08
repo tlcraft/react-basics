@@ -18,13 +18,14 @@ function ScratchPad() {
         });
     };
 
-    const isDisabled = () => { return items.length >= 10; }
+    const isAddDisabled = () => items.length >= 10;
+    const isRemoveDisabled = () => items.length === 0;
 
     return (
         <>
             <h1>Scratch Pad for React Concepts</h1>
-            <button onClick={addToList} type="button" disabled={isDisabled()}>Add To List</button>
-            <button onClick={removeFromList} type="button" disabled={items.length === 0}>Remove From List</button>
+            <button onClick={addToList} type="button" disabled={isAddDisabled()}>Add To List</button>
+            <button onClick={removeFromList} type="button" disabled={isRemoveDisabled()}>Remove From List</button>
             <ul className='item-list'>
                 {formattedItems}
             </ul>
