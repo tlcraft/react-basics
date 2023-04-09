@@ -24,8 +24,8 @@ function ScratchPad() {
     return (
         <>
             <h1>Scratch Pad for React Concepts</h1>
-            <button onClick={addToList} type="button" disabled={isAddDisabled()}>Add To List</button>
-            <button onClick={removeFromList} type="button" disabled={isRemoveDisabled()}>Remove From List</button>
+            <button className="counter-button" onClick={addToList} type="button" disabled={isAddDisabled()}>Add To List</button>
+            <button className="counter-button" onClick={removeFromList} type="button" disabled={isRemoveDisabled()}>Remove From List</button>
             <ul className='item-list'>
                 {formattedItems}
             </ul>
