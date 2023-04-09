@@ -8,6 +8,7 @@ import BusinessCard from './components/business-card';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import Vrbo from './components/vrbo/vrbo';
 import Meme from './components/meme/meme';
+import ScratchPad from './components/scratch-pad/scratch-pad';
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
     navigateToBody: () => navigate('/body'),
     navigateToCard: () => navigate('/card'),
     navigateToVrbo: () => navigate('/vrbo'),
-    navigateToMeme: () => navigate('/meme')
+    navigateToMeme: () => navigate('/meme'),
+    navigateToScratchPad: () => navigate('/scratch-pad')
   };
 
   return (
@@ -31,6 +33,7 @@ function App() {
             <Route path="/body" element={<Body />} />
             <Route path="/vrbo" element={<Vrbo />} />
             <Route path="/meme" element={<Meme />} />
+            <Route path="/scratch-pad" element={<ScratchPad />} />
         </Routes>
         <Footer />
       </div>
