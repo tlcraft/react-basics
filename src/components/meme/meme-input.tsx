@@ -11,7 +11,14 @@ interface MemeImage {
     box_count: number;
 }
 
+interface Meme {
+    image: MemeImage;
+    upperText: string;
+    lowerText: string;
+}
+
 function MemeInput() {
+    const [meme, setMeme] = useState({ image: getNewImage, upperText: '', lowerText: '' });
     const [image, setImage] = useState(getNewImage());
     const [upperText, setUpperText] = useState('');
     const [lowerText, setLowerText] = useState('');
