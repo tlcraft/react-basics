@@ -18,22 +18,19 @@ interface Meme {
 }
 
 function MemeInput() {
-    const [meme, setMeme] = useState({ image: getNewImage, upperText: '', lowerText: '' });
-    const [image, setImage] = useState(getNewImage());
-    const [upperText, setUpperText] = useState('');
-    const [lowerText, setLowerText] = useState('');
+    const [meme, setMeme] = useState({ image: getNewImage(), upperText: '', lowerText: '' } as Meme);
 
     return (
         <>
             <div className="meme-input-form">
-                <input type="text" id="upper-text" placeholder="Upper text" name="upper-text" onChange={(e) => {setUpperText(e.target.value)}}/>
-                <input type="text" id="lower-text" placeholder="Lower text" name="lower-text" onChange={(e) => {setLowerText(e.target.value)}}/>
-                <button type="button" onClick={() => setImage(getNewImage)} className="new-image-btn">Get a new image</button>
+                <input type="text" id="upper-text" placeholder="Upper text" name="upper-text" onChange={(e) => {setMeme(previousState => { return { ...previousState, upperText: e.target.value } } )}}/>
+                <input type="text" id="lower-text" placeholder="Lower text" name="lower-text" onChange={(e) => {setMeme(previousState => { return { ...previousState, lowerText: e.target.value } } )}}/>
+                <button type="button" onClick={() => setMeme(previousState => { return { ...previousState, image: getNewImage() } } ) } className="new-image-btn">Get a new image</button>
             </div>
             <div className="meme-container">
-                <img className="meme-image" src={image.url} alt={image.name} />
-                <p className="meme-text upper-text">{upperText}</p>
-                <p className="meme-text lower-text">{lowerText}</p>
+                <img className="meme-image" src={meme.image.url} alt={meme.image.name} />
+                <p className="meme-text upper-text">{meme.upperText}</p>
+                <p className="meme-text lower-text">{meme.lowerText}</p>
             </div>
         </>
     )
