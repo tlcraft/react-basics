@@ -12,7 +12,6 @@ function MemeInput() {
     const [memeList, setMemeList] = useState(memeResponse);
     const [meme, setMeme] = useState({ image: getNewImage(memeList), upperText: '', lowerText: '' } as Meme);
 
-
     return (
         <>
             <div className="meme-input-form">
