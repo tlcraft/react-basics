@@ -7,7 +7,10 @@ function StaticPage() {
         <>  
             <div className="App-banner">
                 <p>
-                    Edit <code>src/App.js</code> and save to reload.
+                    This is a little sample project for learning more about React.
+                </p>
+                <p> 
+                    Check out <a className="App-link" href="https://scrimba.com/learn/learnreact">Bob Ziroll's free React tutorial</a> to learn more!
                 </p>
                 { helloElement }
                 <a  className="App-link"
