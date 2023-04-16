@@ -6,17 +6,22 @@ function StaticPage() {
     return (
         <>  
             <div className="App-banner">
+                { helloElement }
                 <p>
                     This is a little sample project for learning more about React.
                 </p>
                 <p> 
-                    Check out <a className="App-link" href="https://scrimba.com/learn/learnreact">Bob Ziroll's free React tutorial</a> to learn more!
+                    Check out&nbsp;
+                    <a className="App-link" 
+                        href="https://scrimba.com/learn/learnreact" 
+                        target="_blank"
+                        rel="external noopener noreferrer">Bob Ziroll's free React tutorial</a>&nbsp; 
+                    to learn more!
                 </p>
-                { helloElement }
                 <a  className="App-link"
                     href="https://reactjs.org"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="external noopener noreferrer"
                     >
                     Learn React
                 </a>
