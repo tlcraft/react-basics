@@ -6,14 +6,22 @@ function StaticPage() {
     return (
         <>  
             <div className="App-banner">
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
                 { helloElement }
+                <p>
+                    This is a little sample project for learning more about React.
+                </p>
+                <p> 
+                    Check out&nbsp;
+                    <a className="App-link" 
+                        href="https://scrimba.com/learn/learnreact" 
+                        target="_blank"
+                        rel="external noopener noreferrer">Bob Ziroll's free React tutorial</a>&nbsp; 
+                    to learn more!
+                </p>
                 <a  className="App-link"
                     href="https://reactjs.org"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="external noopener noreferrer"
                     >
                     Learn React
                 </a>

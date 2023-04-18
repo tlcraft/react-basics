@@ -25,6 +25,7 @@ function App() {
   };
 
   return (
+    <>
       <div className="App">
         <Header {...headerProps}/>
         <Routes>
@@ -35,8 +36,10 @@ function App() {
             <Route path="/meme" element={<Meme />} />
             <Route path="/scratch-pad" element={<ScratchPad />} />
         </Routes>
-        <Footer />
+        <div className="footer-spacing"></div>
       </div>
+      <Footer />
+    </>
   );
 }
 
