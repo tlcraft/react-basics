@@ -1,7 +1,10 @@
 import './scratch-pad.css';
 import React, { useState } from 'react';
+import boxes from './boxes';
 
 function ScratchPad() {
+    const [squares, setSquares] = useState(boxes);
+
     const [items, setItems] = useState([] as number[]);
     const formattedItems = items.map(item => <li>{item}</li>);
     const addToList = () => {
