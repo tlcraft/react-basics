@@ -4,7 +4,7 @@ import boxes from './boxes';
 
 function ScratchPad() {
     const [squares, setSquares] = useState(boxes);
-    const formattedSquares = squares.map(square => {
+    const squareElements = squares.map(square => {
         return <div key={square.id}>{square.on ? "On" : "Off" }</div>
     });
 
@@ -35,7 +35,7 @@ function ScratchPad() {
             <ul className='item-list'>
                 {formattedItems}
             </ul>
-            {formattedSquares}
+            {squareElements}
         </>
 
     )
