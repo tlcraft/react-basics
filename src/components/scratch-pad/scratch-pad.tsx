@@ -1,12 +1,14 @@
 import './scratch-pad.css';
 import React, { useState } from 'react';
+import { Box, BoxProps } from './box';
 import boxes from './boxes';
 
 function ScratchPad() {
     const [squares, setSquares] = useState(boxes);
-    const squareElements = squares.map(square => (
-        <div key={square.id} className={`square ${square.on ? "yellow" : "grey"}`}></div>
-    ));
+    const squareElements = squares.map((square, index) => {
+        const props: BoxProps = { on: square.on };
+        return <Box key={index} {...props} />
+    });
 
     const [items, setItems] = useState([] as number[]);
     const formattedItems = items.map((item, index) => <li key={index}>{item}</li>);
