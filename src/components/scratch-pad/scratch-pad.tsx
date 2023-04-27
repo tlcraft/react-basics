@@ -5,10 +5,7 @@ import boxes from './boxes';
 
 function ScratchPad() {
     const [squares, setSquares] = useState(boxes);
-    const squareElements = squares.map((square, index) => {
-        const props: BoxProps = { on: square.on };
-        return <Box key={index} {...props} />
-    });
+    const squareElements = squares.map((square, index) => <Box key={index} on={ square.on } />);
 
     const [items, setItems] = useState([] as number[]);
     const formattedItems = items.map((item, index) => <li key={index}>{item}</li>);
