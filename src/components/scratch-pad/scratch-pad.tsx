@@ -5,7 +5,8 @@ import boxes from './boxes';
 
 function ScratchPad() {
     const [squares, setSquares] = useState(boxes);
-    const squareElements = squares.map(square => <Box key={square.id} on={ square.on } />);
+    const toggle = () => console.log("Clicked!");
+    const squareElements = squares.map(square => <Box key={square.id} on={ square.on } toggle={toggle} />);
 
     const [items, setItems] = useState([] as number[]);
     const formattedItems = items.map((item, index) => <li key={index}>{item}</li>);
