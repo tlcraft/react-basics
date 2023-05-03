@@ -1,4 +1,9 @@
-export default [
+export interface BoxData {
+    id: number;
+    on: boolean;
+}
+
+export const boxes: BoxData[] = [
     {
         id: 1,
         on: true
