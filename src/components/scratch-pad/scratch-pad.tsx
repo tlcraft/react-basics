@@ -7,15 +7,14 @@ function ScratchPad() {
     const [squares, setSquares] = useState(boxes);
     const toggle = (boxId: number) => { 
         setSquares(prevValue => {
-            for(let index = 0; index < prevValue.length; index++) {
+            const index = prevValue.findIndex(box => box.id === boxId);
+            if (index >= 0) {
                 const square = prevValue[index];
-                if (square.id === boxId) {
-                    const priorItems = prevValue.slice(0, index);
-                    const remainingItems = (index + 1) < prevValue.length ? prevValue.slice(index + 1, prevValue.length) : [];
-                    const updatedList = [...priorItems, { ...square, on: !square.on }, ...remainingItems];
-                    return updatedList;
-                }
-            };
+                const priorItems = prevValue.slice(0, index);
+                const remainingItems = (index + 1) < prevValue.length ? prevValue.slice(index + 1, prevValue.length) : [];
+                const updatedList = [...priorItems, { ...square, on: !square.on }, ...remainingItems];
+                return updatedList;
+            }
             
             console.warn("Item not found!");
             return prevValue;
