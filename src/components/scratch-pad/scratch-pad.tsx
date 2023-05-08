@@ -5,18 +5,18 @@ import { boxes } from './boxes';
 
 function ScratchPad() {
     const [squares, setSquares] = useState(boxes);
-    const toggle = (boxId: number) => { 
+    const toggle = (squareId: number) => { 
         setSquares(currentSquares => {
-            const index = currentSquares.findIndex(box => box.id === boxId);
+            const index = currentSquares.findIndex(square => square.id === squareId);
             if (index >= 0) {
-                const square = currentSquares[index];
-                const priorItems = currentSquares.slice(0, index);
-                const remainingItems = (index + 1) < currentSquares.length ? currentSquares.slice(index + 1, currentSquares.length) : [];
-                const updatedList = [...priorItems, { ...square, on: !square.on }, ...remainingItems];
+                const clickedSquare = currentSquares[index];
+                const precedingSquares = currentSquares.slice(0, index);
+                const followingSquares = (index + 1) < currentSquares.length ? currentSquares.slice(index + 1, currentSquares.length) : [];
+                const updatedList = [...precedingSquares, { ...clickedSquare, on: !clickedSquare.on }, ...followingSquares];
                 return updatedList;
             }
             
-            console.warn("Item not found!");
+            console.warn("Square not found!");
             return currentSquares;
         });
     };
