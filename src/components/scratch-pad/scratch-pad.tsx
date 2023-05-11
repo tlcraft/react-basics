@@ -12,7 +12,7 @@ function ScratchPad() {
             });
         });
     };
-    const squareElements = squares.map(square => <Box key={square.id} on={ square.on } toggle={() => toggle(square.id)} />);
+    const squareElements = squares.map(square => <Box key={square.id} on={square.on} toggle={() => toggle(square.id)} />);
 
     const [items, setItems] = useState([] as number[]);
     const formattedItems = items.map((item, index) => <li key={index}>{item}</li>);
