@@ -5,14 +5,14 @@ import { boxes } from './boxes';
 
 function ScratchPad() {
     const [squares, setSquares] = useState(boxes);
-    const toggle = (squareId: number) => { 
+    const toggleSquareOn = (squareId: number) => { 
         setSquares(currentSquares => {
             return currentSquares.map(square => {
                 return square.id === squareId ? { ...square, on: !square.on } : square;
             });
         });
     };
-    const squareElements = squares.map(square => <Box key={square.id} on={square.on} toggle={() => toggle(square.id)} />);
+    const squareElements = squares.map(square => <Box key={square.id} on={square.on} toggleOn={() => toggleSquareOn(square.id)} />);
 
     const [items, setItems] = useState([] as number[]);
     const formattedItems = items.map((item, index) => <li key={index}>{item}</li>);
