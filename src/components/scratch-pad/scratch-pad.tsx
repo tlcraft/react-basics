@@ -1,9 +1,21 @@
 import './scratch-pad.css';
 import React, { useState } from 'react';
+import { Box } from './box';
+import { boxes } from './boxes';
 
 function ScratchPad() {
+    const [squares, setSquares] = useState(boxes);
+    const toggleSquareOn = (squareId: number) => { 
+        setSquares(currentSquares => {
+            return currentSquares.map(square => {
+                return square.id === squareId ? { ...square, on: !square.on } : square;
+            });
+        });
+    };
+    const squareElements = squares.map(square => <Box key={square.id} on={square.on} toggleOn={() => toggleSquareOn(square.id)} />);
+
     const [items, setItems] = useState([] as number[]);
-    const formattedItems = items.map(item => <li>{item}</li>);
+    const formattedItems = items.map((item, index) => <li key={index}>{item}</li>);
     const addToList = () => {
         setItems(previousList => [...previousList, previousList.length + 1]);
     };
@@ -29,6 +41,7 @@ function ScratchPad() {
             <ul className='item-list'>
                 {formattedItems}
             </ul>
+            {squareElements}
         </>
 
     )
