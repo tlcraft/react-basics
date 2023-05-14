@@ -4,6 +4,8 @@ import { Box } from './box';
 import { boxes } from './boxes';
 
 function ScratchPad() {
+    const [isShown, setIsShown] = useState(false);
+
     const [squares, setSquares] = useState(boxes);
     const toggleSquareOn = (squareId: number) => { 
         setSquares(currentSquares => {
@@ -42,6 +44,10 @@ function ScratchPad() {
                 {formattedItems}
             </ul>
             {squareElements}
+            <div>
+                <button onClick={() => setIsShown(prevValue => { console.log("Toggle!", prevValue); return !prevValue})} type="button">Toggle Display</button>
+                {isShown && <p>Placeholder Section</p>}
+            </div>
         </>
 
     )
