@@ -45,7 +45,7 @@ function ScratchPad() {
             </ul>
             {squareElements}
             <div>
-                <button onClick={() => setIsShown(prevValue => { console.log("Toggle!", prevValue); return !prevValue})} type="button">Toggle Display</button>
+                <button onClick={() => setIsShown(prevShown => { console.log("Toggle!", prevShown); return !prevShown})} type="button">Toggle Display</button>
                 {isShown && <p>Placeholder Section</p>}
             </div>
         </>
