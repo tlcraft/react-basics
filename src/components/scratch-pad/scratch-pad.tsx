@@ -4,6 +4,7 @@ import { Box } from './box';
 import { boxes } from './boxes';
 
 function ScratchPad() {
+    const [unreadMessages, setUnreadMessages] = useState(["a", "b"]);
     const [isShown, setIsShown] = useState(false);
 
     const [squares, setSquares] = useState(boxes);
@@ -48,6 +49,7 @@ function ScratchPad() {
                 <button onClick={() => setIsShown(prevShown => { console.log("Toggle!", prevShown); return !prevShown})} type="button">Toggle Display</button>
                 {isShown && <p>Placeholder Section</p>}
             </div>
+            {unreadMessages.length && <div>You have {unreadMessages.length} unread messages.</div>}
         </>
 
     )
