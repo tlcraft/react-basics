@@ -49,7 +49,11 @@ function ScratchPad() {
                 <button onClick={() => setIsShown(prevShown => { console.log("Toggle!", prevShown); return !prevShown})} type="button">Toggle Display</button>
                 {isShown && <p>Placeholder Section</p>}
             </div>
-            {unreadMessages.length > 0 && <div>You have {unreadMessages.length} unread messages.</div>}
+            {
+                unreadMessages.length > 0
+                ? <div>You have {unreadMessages.length} unread messages.</div>
+                : <div>You're all caught up.</div>
+            }
         </>
 
     )
