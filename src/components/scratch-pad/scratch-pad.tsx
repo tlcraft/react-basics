@@ -51,8 +51,8 @@ function ScratchPad() {
             </div>
             {
                 unreadMessages.length > 0
-                ? <div>You have {unreadMessages.length} unread messages.</div>
-                : <div>You're all caught up.</div>
+                ? <p>You have {unreadMessages.length} unread messages.</p>
+                : <p>You're all caught up.</p>
             }
         </>
 
