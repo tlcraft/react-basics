@@ -45,8 +45,8 @@ function ScratchPad() {
             </ul>
             {
                 formattedItems.length > 0
-                ? <p>You have {formattedItems.length} unread messages.</p>
-                : <p>You're all caught up.</p>
+                ? <p>You have {formattedItems.length} items in your list.</p>
+                : <p>You have no items in your list.</p>
             }
             {squareElements}
             <div>
