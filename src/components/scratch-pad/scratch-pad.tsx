@@ -35,6 +35,7 @@ function ScratchPad() {
     const isAddDisabled = () => items.length >= 10;
     const isRemoveDisabled = () => items.length === 0;
 
+    const itemNoun = formattedItems.length == 1 ? "item" : "items";
     return (
         <>
             <h1>Scratch Pad for React Concepts</h1>
@@ -45,7 +46,7 @@ function ScratchPad() {
             </ul>
             {
                 formattedItems.length > 0
-                ? <p>You have {formattedItems.length} items in your list.</p>
+                ? <p>You have {formattedItems.length} {itemNoun} in your list.</p>
                 : <p>You have no items in your list.</p>
             }
             {squareElements}
