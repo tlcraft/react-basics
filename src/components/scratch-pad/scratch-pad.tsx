@@ -49,9 +49,11 @@ function ScratchPad() {
                 ? <p>You have {formattedItems.length} {itemNoun} in your list.</p>
                 : <p>You have no items in your list.</p>
             }
-            {squareElements}
+            <div className="squares-container">
+                {squareElements}
+            </div>
             <div>
-                <button onClick={() => setIsShown(prevShown => { console.log("Toggle!", prevShown); return !prevShown})} type="button">Toggle Display</button>
+                <button onClick={() => setIsShown(prevShown => { console.log("Toggle!", prevShown); return !prevShown})} type="button" className="toggle-button">Toggle Display</button>
                 {isShown && <p>Placeholder Section</p>}
             </div>
         </>
