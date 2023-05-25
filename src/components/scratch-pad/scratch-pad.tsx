@@ -4,6 +4,8 @@ import { Box } from './box';
 import { boxes } from './boxes';
 
 function ScratchPad() {
+    const [isShown, setIsShown] = useState(false);
+
     const [squares, setSquares] = useState(boxes);
     const toggleSquareOn = (squareId: number) => { 
         setSquares(currentSquares => {
@@ -33,6 +35,7 @@ function ScratchPad() {
     const isAddDisabled = () => items.length >= 10;
     const isRemoveDisabled = () => items.length === 0;
 
+    const itemNoun = formattedItems.length == 1 ? "item" : "items";
     return (
         <>
             <h1>Scratch Pad for React Concepts</h1>
@@ -41,7 +44,18 @@ function ScratchPad() {
             <ul className='item-list'>
                 {formattedItems}
             </ul>
-            {squareElements}
+            {
+                formattedItems.length > 0
+                ? <p>You have {formattedItems.length} {itemNoun} in your list.</p>
+                : <p>You have no items in your list.</p>
+            }
+            <div className="squares-container">
+                {squareElements}
+            </div>
+            <div>
+                <button onClick={() => setIsShown(prevShown => { console.log("Toggle!", prevShown); return !prevShown})} type="button" className="toggle-button">Toggle Display</button>
+                {isShown && <p>Placeholder Section</p>}
+            </div>
         </>
 
     )
