@@ -36,6 +36,8 @@ function ScratchPad() {
     const isRemoveDisabled = () => items.length === 0;
 
     const itemNoun = formattedItems.length == 1 ? "item" : "items";
+
+    const handleChange = (event: any) => console.log(event);
     return (
         <>
             <h1>Scratch Pad for React Concepts</h1>
@@ -56,8 +58,10 @@ function ScratchPad() {
                 <button onClick={() => setIsShown(prevShown => { console.log("Toggle!", prevShown); return !prevShown})} type="button" className="toggle-button">Toggle Display</button>
                 {isShown && <p>Placeholder Section</p>}
             </div>
+            <form>
+                <input type="text" placeholder="Name" onChange={handleChange} />
+            </form>
         </>
-
     )
 }
 
