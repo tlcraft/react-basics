@@ -37,7 +37,14 @@ function ScratchPad() {
 
     const itemNoun = formattedItems.length == 1 ? "item" : "items";
 
-    const handleChange = (event: any) => console.log(event);
+    const [name, setName] = useState("");
+    const handleChange = (event: any) => { 
+        console.log("Event: ", event);
+        const newName = event.target.value;
+        setName(newName);
+        console.log("New Name: ", newName);
+    }
+
     return (
         <>
             <h1>Scratch Pad for React Concepts</h1>
@@ -60,6 +67,7 @@ function ScratchPad() {
             </div>
             <form>
                 <input type="text" placeholder="Name" onChange={handleChange} />
+                <p>{name}</p>
             </form>
         </>
     )
