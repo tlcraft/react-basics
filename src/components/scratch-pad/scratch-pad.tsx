@@ -65,7 +65,7 @@ function ScratchPad() {
                 <button onClick={() => setIsShown(prevShown => { console.log("Toggle!", prevShown); return !prevShown})} type="button" className="toggle-button">Toggle Display</button>
                 {isShown && <p>Placeholder Section</p>}
             </div>
-            <form>
+            <form className="name-form">
                 <input type="text" placeholder="Name" onChange={handleChange} />
                 <p>{name}</p>
             </form>
