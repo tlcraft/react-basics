@@ -37,12 +37,14 @@ function ScratchPad() {
 
     const itemNoun = formattedItems.length == 1 ? "item" : "items";
 
-    const [name, setName] = useState("");
+    const [name, setName] = useState({ firstName: "", lastName: "" });
     const handleChange = (event: any) => { 
-        console.log("Event: ", event);
         const newName = event.target.value;
-        setName(newName);
-        console.log("New Name: ", newName);
+        const targetName = event.target.id;
+
+        setName(prevName => {
+            return targetName === "firstName" ? { ...prevName, firstName: newName } : { ...prevName, lastName: newName };
+        });
     }
 
     return (
@@ -66,8 +68,10 @@ function ScratchPad() {
                 {isShown && <p>Placeholder Section</p>}
             </div>
             <form className="name-form">
-                <input type="text" placeholder="Name" onChange={handleChange} />
-                <p>{name}</p>
+                <input type="text" id="firstName" placeholder="First Name" onChange={handleChange} />
+                <input type="text" id="lastName" placeholder="Last Name" onChange={handleChange} />
+                <p>{name.firstName}</p>
+                <p>{name.lastName}</p>
             </form>
         </>
     )
