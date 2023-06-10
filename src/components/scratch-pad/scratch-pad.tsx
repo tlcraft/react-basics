@@ -39,11 +39,8 @@ function ScratchPad() {
 
     const [formData, setFormData] = useState({ firstName: "", lastName: "" });
     const handleChange = (event: any) => { 
-        const newName = event.target.value;
-        const targetName = event.target.id;
-
         setFormData(prevName => {
-            return targetName === "firstName" ? { ...prevName, firstName: newName } : { ...prevName, lastName: newName };
+            return { ...prevName, [event.target.id]: event.target.value };
         });
     }
 
