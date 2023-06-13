@@ -65,9 +65,9 @@ function ScratchPad() {
                 {isShown && <p>Placeholder Section</p>}
             </div>
             <form className="name-form">
-                <input type="text" id="firstName" placeholder="First Name" onChange={handleChange} />
-                <input type="text" id="lastName" placeholder="Last Name" onChange={handleChange} />
-                <input type="text" id="email" placeholder="Email" onChange={handleChange} />
+                <input type="text" id="firstName" placeholder="First Name" onChange={handleChange} value={formData.firstName} />
+                <input type="text" id="lastName" placeholder="Last Name" onChange={handleChange} value={formData.lastName} />
+                <input type="text" id="email" placeholder="Email" onChange={handleChange} value={formData.email} />
                 <p>{formData.firstName}</p>
                 <p>{formData.lastName}</p>
                 <p>{formData.email}</p>
