@@ -18,3 +18,8 @@
 .name-form {
     margin-top: 20px;
 }
+
+.name-form > input {
+    padding: 10px;
+    margin: 2px;
+}
