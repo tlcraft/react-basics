@@ -37,7 +37,7 @@ function ScratchPad() {
 
     const itemNoun = formattedItems.length == 1 ? "item" : "items";
 
-    const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "" });
+    const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comment: "" });
     const handleChange = (event: any) => { 
         setFormData(prevName => {
             return { ...prevName, [event.target.id]: event.target.value };
@@ -68,9 +68,11 @@ function ScratchPad() {
                 <input type="text" id="firstName" placeholder="First Name" onChange={handleChange} value={formData.firstName} />
                 <input type="text" id="lastName" placeholder="Last Name" onChange={handleChange} value={formData.lastName} />
                 <input type="text" id="email" placeholder="Email" onChange={handleChange} value={formData.email} />
+                <textarea id="comment" placeholder="Comment" onChange={handleChange} value={formData.comment}></textarea>
                 <p>{formData.firstName}</p>
                 <p>{formData.lastName}</p>
                 <p>{formData.email}</p>
+                <p>{formData.comment}</p>
             </form>
         </>
     )
