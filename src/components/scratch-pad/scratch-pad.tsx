@@ -68,7 +68,7 @@ function ScratchPad() {
                 <input type="text" id="firstName" placeholder="First Name" onChange={handleChange} value={formData.firstName} />
                 <input type="text" id="lastName" placeholder="Last Name" onChange={handleChange} value={formData.lastName} />
                 <input type="text" id="email" placeholder="Email" onChange={handleChange} value={formData.email} />
-                <textarea id="comment" placeholder="Comment" onChange={handleChange} value={formData.comment}></textarea>
+                <textarea id="comment" placeholder="Comments..." onChange={handleChange} value={formData.comment}></textarea>
                 <p>{formData.firstName}</p>
                 <p>{formData.lastName}</p>
                 <p>{formData.email}</p>
