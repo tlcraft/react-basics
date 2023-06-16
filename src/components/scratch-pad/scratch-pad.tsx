@@ -69,11 +69,13 @@ function ScratchPad() {
                 <input type="text" id="lastName" placeholder="Last Name" onChange={handleChange} value={formData.lastName} />
                 <input type="text" id="email" placeholder="Email" onChange={handleChange} value={formData.email} />
                 <textarea id="comment" placeholder="Comments..." onChange={handleChange} value={formData.comment}></textarea>
+            </form>
+            <div>
                 <p>{formData.firstName}</p>
                 <p>{formData.lastName}</p>
                 <p>{formData.email}</p>
                 <p>{formData.comment}</p>
-            </form>
+            </div>
         </>
     )
 }
