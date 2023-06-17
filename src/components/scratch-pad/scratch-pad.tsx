@@ -78,6 +78,7 @@ function ScratchPad() {
                 <p>{formData.lastName}</p>
                 <p>{formData.email}</p>
                 <p>{formData.comment}</p>
+                <p>{formData.isFriendly.toString()}</p>
             </div>
         </>
     )
