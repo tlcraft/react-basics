@@ -37,10 +37,11 @@ function ScratchPad() {
 
     const itemNoun = formattedItems.length == 1 ? "item" : "items";
 
-    const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comment: "" });
+    const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comment: "", isFriendly: true });
     const handleChange = (event: any) => { 
+        const {id, value, type, checked } = event.target;
         setFormData(prevName => {
-            return { ...prevName, [event.target.id]: event.target.value };
+            return { ...prevName, [id]: type === "checkbox" ? checked : value };
         });
     }
 
@@ -69,6 +70,8 @@ function ScratchPad() {
                 <input type="text" id="lastName" placeholder="Last Name" onChange={handleChange} value={formData.lastName} />
                 <input type="text" id="email" placeholder="Email" onChange={handleChange} value={formData.email} />
                 <textarea id="comment" placeholder="Comments..." onChange={handleChange} value={formData.comment}></textarea>
+                <input type="checkbox" id="isFriendly" checked={formData.isFriendly} onChange={handleChange} />
+                <label htmlFor="isFriendly">Are you friendly?</label>
             </form>
             <div>
                 <p>{formData.firstName}</p>
