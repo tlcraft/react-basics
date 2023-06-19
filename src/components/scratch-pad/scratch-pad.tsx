@@ -37,11 +37,11 @@ function ScratchPad() {
 
     const itemNoun = formattedItems.length == 1 ? "item" : "items";
 
-    const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comment: "", isFriendly: true });
+    const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comment: "", isFriendly: true, employment: "" });
     const handleChange = (event: any) => { 
-        const {id, value, type, checked } = event.target;
+        const {name, value, type, checked } = event.target;
         setFormData(prevName => {
-            return { ...prevName, [id]: type === "checkbox" ? checked : value };
+            return { ...prevName, [name]: type === "checkbox" ? checked : value };
         });
     }
 
@@ -66,12 +66,42 @@ function ScratchPad() {
                 {isShown && <p>Placeholder Section</p>}
             </div>
             <form className="name-form">
-                <input type="text" id="firstName" placeholder="First Name" onChange={handleChange} value={formData.firstName} />
-                <input type="text" id="lastName" placeholder="Last Name" onChange={handleChange} value={formData.lastName} />
-                <input type="text" id="email" placeholder="Email" onChange={handleChange} value={formData.email} />
-                <textarea id="comment" placeholder="Comments..." onChange={handleChange} value={formData.comment}></textarea>
-                <input type="checkbox" id="isFriendly" checked={formData.isFriendly} onChange={handleChange} />
+                <input type="text" name="firstName" placeholder="First Name" onChange={handleChange} value={formData.firstName} />
+                <input type="text" name="lastName" placeholder="Last Name" onChange={handleChange} value={formData.lastName} />
+                <input type="text" name="email" placeholder="Email" onChange={handleChange} value={formData.email} />
+                <textarea name="comment" placeholder="Comments..." onChange={handleChange} value={formData.comment}></textarea>
+                <input type="checkbox" name="isFriendly" checked={formData.isFriendly} onChange={handleChange} />
                 <label htmlFor="isFriendly">Are you friendly?</label>
+                <fieldset>
+                    <legend>Current employment status</legend>
+                    <input 
+                        type="radio"
+                        id="unemployed"
+                        name="employment"
+                        value="unemployed"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="unemployed">Unemployed</label>
+                    <br />
+                    <input 
+                        type="radio"
+                        id="part-time"
+                        name="employment"
+                        value="part-time"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="part-time">Part-time</label>
+                    <br />
+                    <input 
+                        type="radio"
+                        id="full-time"
+                        name="employment"
+                        value="full-time"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="full-time">Full-time</label>
+                    <br />
+                </fieldset>
             </form>
             <div>
                 <p>{formData.firstName}</p>
@@ -79,6 +109,7 @@ function ScratchPad() {
                 <p>{formData.email}</p>
                 <p>{formData.comment}</p>
                 <p>{formData.isFriendly.toString()}</p>
+                <p>{formData.employment}</p>
             </div>
         </>
     )
