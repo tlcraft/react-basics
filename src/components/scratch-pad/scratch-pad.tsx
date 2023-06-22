@@ -113,6 +113,7 @@ function ScratchPad() {
                     onChange={handleChange}
                     name="favColor"
                 >
+                    <option value="">-- Select --</option>
                     <option value="red">Red</option>
                     <option value="orange">Orange</option>
                     <option value="yellow">Yellow</option>
