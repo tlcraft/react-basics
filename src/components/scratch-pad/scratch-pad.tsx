@@ -37,7 +37,7 @@ function ScratchPad() {
 
     const itemNoun = formattedItems.length == 1 ? "item" : "items";
 
-    const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comment: "", isFriendly: true, employment: "" });
+    const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comment: "", isFriendly: true, employment: "", favColor: "" });
     const handleChange = (event: any) => { 
         const {name, value, type, checked } = event.target;
         setFormData(prevName => {
@@ -105,6 +105,22 @@ function ScratchPad() {
                     <label htmlFor="full-time">Full-time</label>
                     <br />
                 </fieldset>
+                <label htmlFor="favColor">What is your favorite color?</label>
+                <br />
+                <select 
+                    id="favColor"
+                    value={formData.favColor}
+                    onChange={handleChange}
+                    name="favColor"
+                >
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="indigo">Indigo</option>
+                    <option value="violet">Violet</option>
+                </select>
             </form>
             <div>
                 <p>{formData.firstName}</p>
@@ -113,6 +129,7 @@ function ScratchPad() {
                 <p>{formData.comment}</p>
                 <p>{formData.isFriendly.toString()}</p>
                 <p>{formData.employment}</p>
+                <p>{formData.favColor}</p>
             </div>
         </>
     )
