@@ -37,7 +37,17 @@ function ScratchPad() {
 
     const itemNoun = formattedItems.length == 1 ? "item" : "items";
 
-    const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comment: "", isFriendly: true, employment: "", favColor: "" });
+    const [formData, setFormData] = useState(
+        { 
+            firstName: "", 
+            lastName: "", 
+            email: "", 
+            comment: "", 
+            isFriendly: true, 
+            employment: "", 
+            favColor: "" 
+        }
+    );
     const handleChange = (event: any) => { 
         const {name, value, type, checked } = event.target;
         setFormData(prevName => {
