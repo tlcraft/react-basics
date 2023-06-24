@@ -45,6 +45,11 @@ function ScratchPad() {
         });
     }
 
+    const handleSubmit = (event: any) => { 
+        event.preventDefault(); 
+        console.log("Form Data: ", formData);
+    };
+
     return (
         <>
             <h1>Scratch Pad for React Concepts</h1>
@@ -65,7 +70,7 @@ function ScratchPad() {
                 <button onClick={() => setIsShown(prevShown => { console.log("Toggle!", prevShown); return !prevShown})} type="button" className="toggle-button">Toggle Display</button>
                 {isShown && <p>Placeholder Section</p>}
             </div>
-            <form className="name-form">
+            <form className="name-form" onSubmit={handleSubmit}>
                 <input type="text" name="firstName" placeholder="First Name" onChange={handleChange} value={formData.firstName} />
                 <input type="text" name="lastName" placeholder="Last Name" onChange={handleChange} value={formData.lastName} />
                 <input type="text" name="email" placeholder="Email" onChange={handleChange} value={formData.email} />
@@ -122,6 +127,8 @@ function ScratchPad() {
                     <option value="indigo">Indigo</option>
                     <option value="violet">Violet</option>
                 </select>
+                <br />
+                <button>Submit</button>
             </form>
             <div>
                 <p>{formData.firstName}</p>
