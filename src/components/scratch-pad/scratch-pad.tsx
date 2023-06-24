@@ -141,13 +141,14 @@ function ScratchPad() {
                 <button>Submit</button>
             </form>
             <div>
-                <p>{formData.firstName}</p>
-                <p>{formData.lastName}</p>
-                <p>{formData.email}</p>
-                <p>{formData.comment}</p>
-                <p>{formData.isFriendly.toString()}</p>
-                <p>{formData.employment}</p>
-                <p>{formData.favColor}</p>
+                <h1>Details</h1>
+                <p>First Name: {formData.firstName}</p>
+                <p>Last Name: {formData.lastName}</p>
+                <p>Email: {formData.email}</p>
+                <p>Comments: {formData.comment}</p>
+                <p>Is Friendly: {formData.isFriendly.toString()}</p>
+                <p>Employment Status: {formData.employment}</p>
+                <p>Favorite Color: {formData.favColor}</p>
             </div>
         </>
     )
