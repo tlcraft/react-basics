@@ -14,3 +14,18 @@
 .toggle-button {
     margin-top: 20px;
 }
+
+.name-form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.name-form > input, textarea {
+    padding: 10px;
+    margin: 2px;
+}
