@@ -150,6 +150,28 @@ function ScratchPad() {
                 <p>Employment Status: {formData.employment}</p>
                 <p>Favorite Color: {formData.favColor}</p>
             </div>
+            <form className="sign-up-form">
+                <input 
+                    type="email" 
+                    placeholder="Email address"
+                />
+                <input 
+                    type="password" 
+                    placeholder="Password"
+                />
+                <input 
+                    type="password" 
+                    placeholder="Confirm password"
+                />                
+                <div>
+                    <input
+                        id="okayToEmail"
+                        type="checkbox"                        
+                    />
+                    <label htmlFor="okayToEmail">I want to join the newsletter</label>
+                </div>
+                <button>Sign up</button>
+            </form>
         </>
     )
 }
