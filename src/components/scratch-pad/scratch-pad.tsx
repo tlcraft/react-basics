@@ -48,6 +48,7 @@ function ScratchPad() {
             favColor: "" 
         }
     );
+
     const handleChange = (event: any) => { 
         const {name, value, type, checked } = event.target;
         setFormData(prevName => {
@@ -58,6 +59,19 @@ function ScratchPad() {
     const handleSubmit = (event: any) => { 
         event.preventDefault(); 
         console.log("Form Data: ", formData);
+    };
+
+    const [signUpFormData, setSignUpFormData] = useState(
+        { 
+            email: "", 
+            password: "", 
+            okToEmail: true, 
+        }
+    );
+
+    const handleSignUpSubmit = (event: any) => { 
+        event.preventDefault(); 
+        console.log("Sign Up Form Data: ", signUpFormData);
     };
 
     return (
@@ -150,7 +164,7 @@ function ScratchPad() {
                 <p>Employment Status: {formData.employment}</p>
                 <p>Favorite Color: {formData.favColor}</p>
             </div>
-            <form className="sign-up-form">
+            <form className="sign-up-form" onSubmit={handleSignUpSubmit}>
                 <input 
                     type="email" 
                     placeholder="Email address"
