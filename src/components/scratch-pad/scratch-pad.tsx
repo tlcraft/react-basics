@@ -65,9 +65,17 @@ function ScratchPad() {
         { 
             email: "", 
             password: "", 
-            okToEmail: true, 
+            confirmedPassword: "",
+            okayToEmail: true, 
         }
     );
+
+    const handleSignUpChange = (event: any) => { 
+        const {name, value, type, checked } = event.target;
+        setSignUpFormData(prevName => {
+            return { ...prevName, [name]: type === "checkbox" ? checked : value };
+        });
+    }
 
     const handleSignUpSubmit = (event: any) => { 
         event.preventDefault(); 
@@ -167,20 +175,32 @@ function ScratchPad() {
             <form className="sign-up-form" onSubmit={handleSignUpSubmit}>
                 <input 
                     type="email" 
+                    name="email"
                     placeholder="Email address"
+                    value={signUpFormData.email}
+                    onChange={handleSignUpChange}
                 />
                 <input 
                     type="password" 
+                    name="password"
                     placeholder="Password"
+                    value={signUpFormData.password}
+                    onChange={handleSignUpChange}
                 />
                 <input 
                     type="password" 
+                    name="confirmedPassword"
                     placeholder="Confirm password"
+                    value={signUpFormData.confirmedPassword}
+                    onChange={handleSignUpChange}
                 />                
                 <div>
                     <input
                         id="okayToEmail"
-                        type="checkbox"                        
+                        type="checkbox"
+                        name="okayToEmail"
+                        checked={signUpFormData.okayToEmail}
+                        onChange={handleSignUpChange}                      
                     />
                     <label htmlFor="okayToEmail">I want to join the newsletter</label>
                 </div>
