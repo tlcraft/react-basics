@@ -84,6 +84,7 @@ function ScratchPad() {
             console.log("Successfully signed up.");
         } else {
             console.log("Passwords do not match");
+            return;
         }
 
         if (signUpFormData.okayToEmail) {
