@@ -80,16 +80,19 @@ function ScratchPad() {
     const handleSignUpSubmit = (event: any) => { 
         event.preventDefault(); 
         console.log("Sign Up Form Data: ", signUpFormData);
+        let message;
         if (signUpFormData.password === signUpFormData.confirmedPassword) {
-            console.log("Successfully signed up.");
+            message = "Successfully signed up.";
         } else {
-            console.log("Passwords do not match");
+            alert("Passwords do not match");
             return;
         }
 
         if (signUpFormData.okayToEmail) {
-            console.log("Thanks for signing up for the newsletter!");
+            message += "\nThanks for signing up for the newsletter!";
         }
+
+        alert(message);
     };
 
     return (
