@@ -17,12 +17,21 @@ function MemeInput() {
         setMeme(previousState => ({ ...previousState, [name]: value }));
     }
 
+    const handleNewMemeClick = () => {
+        setMeme(previousState => { 
+            return { 
+                ...previousState, 
+                image: getNewImage(memeList) 
+            } 
+        });
+    }
+
     return (
         <>
             <div className="meme-input-form">
                 <input type="text" id="upper-text" placeholder="Upper text" name="upperText" onChange={handleChange}/>
                 <input type="text" id="lower-text" placeholder="Lower text" name="lowerText" onChange={handleChange}/>
-                <button type="button" onClick={() => setMeme(previousState => { return { ...previousState, image: getNewImage(memeList) } } ) } className="new-image-btn">Get a new image</button>
+                <button type="button" onClick={handleNewMemeClick} className="new-image-btn">Get a new image</button>
             </div>
             <div className="meme-container">
                 <img className="meme-image" src={meme.image.url} alt={meme.image.name} />
