@@ -301,14 +301,6 @@ export const memeResponse: MemeResponse = {
                 "box_count": 2
             },
             {
-                "id": "61532",
-                "name": "The Most Interesting Man In The World",
-                "url": "https://i.imgflip.com/1bh8.jpg",
-                "width": 550,
-                "height": 690,
-                "box_count": 2
-            },
-            {
                 "id": "563423",
                 "name": "That Would Be Great",
                 "url": "https://i.imgflip.com/c2qn.jpg",
