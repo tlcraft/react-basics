@@ -1,5 +1,5 @@
 import './scratch-pad.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box } from './box';
 import { boxes } from './boxes';
 
@@ -94,6 +94,10 @@ function ScratchPad() {
 
         alert(message);
     };
+
+    useEffect(() => {
+        console.log("Use effect example!");
+    });
 
     return (
         <>
