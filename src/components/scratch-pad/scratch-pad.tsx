@@ -95,9 +95,11 @@ function ScratchPad() {
         alert(message);
     };
 
+    // useEffect runs after the page is painted
+    // the second parameter lists dependencies to watch in order to rerun useEffect
     useEffect(() => {
         console.log("Use effect example!");
-    });
+    }, []);
 
     return (
         <>
