@@ -2,6 +2,7 @@ import './scratch-pad.css';
 import React, { useEffect, useState } from 'react';
 import { Box } from './box';
 import { boxes } from './boxes';
+import { StarWarsData } from './star-wars-data';
 
 function ScratchPad() {
     const [isShown, setIsShown] = useState(false);
@@ -99,6 +100,13 @@ function ScratchPad() {
     // the second parameter lists dependencies to watch in order to rerun useEffect
     useEffect(() => {
         console.log("Use effect example!");
+    }, []);
+
+    const [starWarsData, setStarWarsData] = useState({} as StarWarsData);
+    useEffect(() => {
+        fetch("https://swapi.dev/api/people/1")
+            .then(res => res.json())
+            .then(data => setStarWarsData(data));
     }, []);
 
     return (
@@ -225,6 +233,14 @@ function ScratchPad() {
                 </div>
                 <button>Sign up</button>
             </form>
+            <h2>Star Wars Data</h2>
+            <p>Name: {starWarsData.name}</p>
+            <p>Gender: {starWarsData.gender}</p>
+            <p>Birth Year: {starWarsData.birth_year}</p>
+            <p>Eye Color: {starWarsData.eye_color}</p>
+            <p>Hair Color: {starWarsData.hair_color}</p>
+            <p>Height: {starWarsData.height}</p>
+            <p>Mass: {starWarsData.mass}</p>
         </>
     )
 }
