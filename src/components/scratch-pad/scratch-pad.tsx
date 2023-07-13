@@ -102,12 +102,20 @@ function ScratchPad() {
         console.log("Use effect example!");
     }, []);
 
+    const [starWarsFormData, setStarWarsFormData] = useState({ characterId: 1 });
     const [starWarsData, setStarWarsData] = useState({} as StarWarsData);
     useEffect(() => {
         fetch("https://swapi.dev/api/people/1")
             .then(res => res.json())
             .then(data => setStarWarsData(data));
     }, []);
+
+    const handleStarWarsFormChange = (event: any) => {
+        const { name, value } = event.target;
+        setStarWarsFormData(prevData => {
+            return { ...prevData, [name]: value };
+        });
+    };
 
     return (
         <>
@@ -234,6 +242,13 @@ function ScratchPad() {
                 <button>Sign up</button>
             </form>
             <h2>Star Wars Data</h2>
+            <input 
+                type="number" 
+                name="characterId"
+                placeholder="Id"
+                value={starWarsFormData.characterId}
+                onChange={handleStarWarsFormChange}
+            /> 
             <p>Name: {starWarsData.name}</p>
             <p>Gender: {starWarsData.gender}</p>
             <p>Birth Year: {starWarsData.birth_year}</p>
