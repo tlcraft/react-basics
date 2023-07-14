@@ -104,10 +104,13 @@ function ScratchPad() {
 
     const [starWarsFormData, setStarWarsFormData] = useState({ characterId: 1 });
     const [starWarsData, setStarWarsData] = useState({} as StarWarsData);
+    const [loadingStarWarsData, setLoadingStarWarsData] = useState(false);
     useEffect(() => {
+        setLoadingStarWarsData(true);
         fetch(`https://swapi.dev/api/people/${starWarsFormData.characterId}`)
             .then(res => res.json())
-            .then(data => setStarWarsData(data));
+            .then(data => setStarWarsData(data))
+            .then(() => setLoadingStarWarsData(false));
     }, [starWarsFormData.characterId]);
 
     const handleStarWarsFormChange = (event: any) => {
@@ -249,13 +252,14 @@ function ScratchPad() {
                 value={starWarsFormData.characterId}
                 onChange={handleStarWarsFormChange}
             /> 
-            <p>Name: {starWarsData.name}</p>
-            <p>Gender: {starWarsData.gender}</p>
-            <p>Birth Year: {starWarsData.birth_year}</p>
-            <p>Eye Color: {starWarsData.eye_color}</p>
-            <p>Hair Color: {starWarsData.hair_color}</p>
-            <p>Height: {starWarsData.height}</p>
-            <p>Mass: {starWarsData.mass}</p>
+            { loadingStarWarsData && <p>Loading...</p> }
+            { !loadingStarWarsData && <p>Name: {starWarsData.name}</p> }
+            { !loadingStarWarsData && <p>Gender: {starWarsData.gender}</p> }
+            { !loadingStarWarsData && <p>Birth Year: {starWarsData.birth_year}</p> }
+            { !loadingStarWarsData && <p>Eye Color: {starWarsData.eye_color}</p> }
+            { !loadingStarWarsData && <p>Hair Color: {starWarsData.hair_color}</p> }
+            { !loadingStarWarsData && <p>Height: {starWarsData.height}</p> }
+            { !loadingStarWarsData && <p>Mass: {starWarsData.mass}</p> }
         </>
     )
 }
