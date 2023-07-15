@@ -1,7 +1,8 @@
 import './scratch-pad.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box } from './box';
 import { boxes } from './boxes';
+import { StarWarsData } from './star-wars-data';
 
 function ScratchPad() {
     const [isShown, setIsShown] = useState(false);
@@ -93,6 +94,30 @@ function ScratchPad() {
         }
 
         alert(message);
+    };
+
+    // useEffect runs after the page is painted
+    // the second parameter lists dependencies to watch in order to rerun useEffect
+    useEffect(() => {
+        console.log("Use effect example!");
+    }, []);
+
+    const [starWarsFormData, setStarWarsFormData] = useState({ characterId: 1 });
+    const [starWarsData, setStarWarsData] = useState({} as StarWarsData);
+    const [loadingStarWarsData, setLoadingStarWarsData] = useState(false);
+    useEffect(() => {
+        setLoadingStarWarsData(true);
+        fetch(`https://swapi.dev/api/people/${starWarsFormData.characterId}`)
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+            .then(() => setLoadingStarWarsData(false));
+    }, [starWarsFormData.characterId]);
+
+    const handleStarWarsFormChange = (event: any) => {
+        const { name, value } = event.target;
+        setStarWarsFormData(prevData => {
+            return { ...prevData, [name]: value };
+        });
     };
 
     return (
@@ -219,6 +244,22 @@ function ScratchPad() {
                 </div>
                 <button>Sign up</button>
             </form>
+            <h2>Star Wars Data</h2>
+            <input 
+                type="number" 
+                name="characterId"
+                placeholder="Id"
+                value={starWarsFormData.characterId}
+                onChange={handleStarWarsFormChange}
+            /> 
+            { loadingStarWarsData && <p>Loading...</p> }
+            { !loadingStarWarsData && <p>Name: {starWarsData.name}</p> }
+            { !loadingStarWarsData && <p>Gender: {starWarsData.gender}</p> }
+            { !loadingStarWarsData && <p>Birth Year: {starWarsData.birth_year}</p> }
+            { !loadingStarWarsData && <p>Eye Color: {starWarsData.eye_color}</p> }
+            { !loadingStarWarsData && <p>Hair Color: {starWarsData.hair_color}</p> }
+            { !loadingStarWarsData && <p>Height: {starWarsData.height}</p> }
+            { !loadingStarWarsData && <p>Mass: {starWarsData.mass}</p> }
         </>
     )
 }
