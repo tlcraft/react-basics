@@ -1,6 +1,6 @@
 import './meme-input.css';
-import React, { useState } from 'react';
-import { memeResponse, MemeResponse, MemeImage } from './meme-data';
+import React, { useEffect, useState } from 'react';
+import { MemeResponse, MemeImage } from './meme-data';
 
 interface Meme {
     image: MemeImage;
@@ -9,7 +9,7 @@ interface Meme {
 }
 
 function MemeInput() {
-    const [memeList, setMemeList] = useState(memeResponse);
+    const [memeList, setMemeList] = useState({} as MemeResponse);
     const [meme, setMeme] = useState({ image: getNewImage(memeList), upperText: '', lowerText: '' } as Meme);
     
     const handleChange = (event: any) => {
@@ -25,6 +25,13 @@ function MemeInput() {
             } 
         });
     }
+
+    useEffect(() => {
+        fetch('https://api.imgflip.com/get_memes')
+            .then(res => res.json())
+            .then(data => setMemeList(data))
+            .then(() => setMeme({ image: getNewImage(memeList), upperText: '', lowerText: '' }));
+    }, []);
 
     return (
         <>
@@ -43,8 +50,12 @@ function MemeInput() {
 }
 
 function getNewImage(memeList: MemeResponse): MemeImage {
-    const random = Math.floor(Math.random() * memeList.data.memes.length);
-    return memeList.data.memes[random];
+    if (memeList && memeList.data && memeList.data.memes) {
+        const random = Math.floor(Math.random() * memeList.data.memes.length);
+        return memeList.data.memes[random];
+    }
+
+    return {} as MemeImage;
 }
 
 export default MemeInput;
