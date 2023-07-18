@@ -10,7 +10,20 @@ interface Meme {
 
 function MemeInput() {
     const [memeList, setMemeList] = useState({} as MemeResponse);
-    const [meme, setMeme] = useState({ image: getNewImage(memeList), upperText: '', lowerText: '' } as Meme);
+    const [meme, setMeme] = useState(
+        { 
+            image: {
+                "id": "97984",
+                "name": "Disaster Girl",
+                "url": "https://i.imgflip.com/23ls.jpg",
+                "width": 500,
+                "height": 375,
+                "box_count": 2
+            }, 
+            upperText: '', 
+            lowerText: '' 
+        } as Meme
+    );
     
     const handleChange = (event: any) => {
         const { name, value } = event.target;
@@ -29,8 +42,7 @@ function MemeInput() {
     useEffect(() => {
         fetch('https://api.imgflip.com/get_memes')
             .then(res => res.json())
-            .then(data => setMemeList(data))
-            .then(() => setMeme({ image: getNewImage(memeList), upperText: '', lowerText: '' }));
+            .then(data => setMemeList(data));
     }, []);
 
     return (
@@ -55,7 +67,16 @@ function getNewImage(memeList: MemeResponse): MemeImage {
         return memeList.data.memes[random];
     }
 
-    return {} as MemeImage;
+    const defaultMeme = {
+        "id": "97984",
+        "name": "Disaster Girl",
+        "url": "https://i.imgflip.com/23ls.jpg",
+        "width": 500,
+        "height": 375,
+        "box_count": 2
+    } as MemeImage;
+    
+    return defaultMeme;
 }
 
 export default MemeInput;
