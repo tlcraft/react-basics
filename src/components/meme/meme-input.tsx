@@ -1,12 +1,6 @@
 import './meme-input.css';
 import React, { useEffect, useState } from 'react';
-import { MemeResponse, MemeImage } from './meme-data';
-
-interface Meme {
-    image: MemeImage;
-    upperText: string;
-    lowerText: string;
-}
+import { MemeResponse, MemeImage, Meme } from './meme-data';
 
 function MemeInput() {
     const [memeList, setMemeList] = useState({} as MemeResponse);

@@ -15,3 +15,9 @@ export interface MemeImage {
     height: number;
     box_count: number;
 }
+
+export interface Meme {
+    image: MemeImage;
+    upperText: string;
+    lowerText: string;
+}
