@@ -14,6 +14,7 @@ export interface MemeImage {
     width: number;
     height: number;
     box_count: number;
+    captions: number;
 }
 
 export interface Meme {
