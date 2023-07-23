@@ -35,8 +35,15 @@ function MemeInput() {
 
     useEffect(() => {
         fetch('https://api.imgflip.com/get_memes')
-            .then(res => res.json())
-            .then(data => setMemeList(data));
+            .then(res => {
+                if(res.ok) {
+                    res.json()
+                    .then(data => setMemeList(data));
+                }
+
+                return Promise.reject(res);
+            })
+            .catch(error => console.log(error));
     }, []);
 
     return (
