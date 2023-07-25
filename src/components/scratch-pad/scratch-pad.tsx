@@ -108,9 +108,16 @@ function ScratchPad() {
     useEffect(() => {
         setLoadingStarWarsData(true);
         fetch(`https://swapi.dev/api/people/${starWarsFormData.characterId}`)
-            .then(res => res.json())
-            .then(data => setStarWarsData(data))
-            .then(() => setLoadingStarWarsData(false));
+            .then(res => {
+                if(res.ok) {
+                    res.json()
+                    .then(data => setStarWarsData(data))
+                    .then(() => setLoadingStarWarsData(false));
+                }
+
+                return Promise.reject(res);
+            })
+            .catch(error => console.log(error));
     }, [starWarsFormData.characterId]);
 
     const handleStarWarsFormChange = (event: any) => {
