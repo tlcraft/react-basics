@@ -1,5 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export function WindowWidth() {
-    return <div>Width: {window.innerWidth}</div>
+    const [show, setShow] = useState(true);
+
+    const handleToggle = () => {
+        setShow(prevValue => !prevValue);
+    }
+
+    return (
+        <>
+            <button onClick={() => handleToggle()}>Toggle</button>
+            {show && <div>Width: {window.innerWidth}</div>}
+        </>
+    )
 }
