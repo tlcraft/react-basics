@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Box } from './box';
 import { boxes } from './boxes';
 import { StarWarsData } from './star-wars-data';
+import { WindowWidth } from './window-width';
 
 function ScratchPad() {
     const [isShown, setIsShown] = useState(false);
@@ -267,6 +268,7 @@ function ScratchPad() {
             { !loadingStarWarsData && <p>Hair Color: {starWarsData.hair_color}</p> }
             { !loadingStarWarsData && <p>Height: {starWarsData.height}</p> }
             { !loadingStarWarsData && <p>Mass: {starWarsData.mass}</p> }
+            <WindowWidth></WindowWidth>
         </>
     )
 }
