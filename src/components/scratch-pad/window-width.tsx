@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export function WindowWidth() {
     const [show, setShow] = useState(true);
@@ -7,6 +7,18 @@ export function WindowWidth() {
     const handleToggle = () => {
         setShow(prevValue => !prevValue);
     }
+
+    useEffect(() => {
+        const watchWidth = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        
+        window.addEventListener("resize", watchWidth);
+        
+        return () => {
+            window.removeEventListener("resize", watchWidth);
+        };
+    }, []);
 
     return (
         <>
