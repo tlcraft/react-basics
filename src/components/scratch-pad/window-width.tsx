@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 export function WindowWidth() {
-    const [show, setShow] = useState(true);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-    const handleToggle = () => {
-        setShow(prevValue => !prevValue);
-    }
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         const watchWidth = () => {
@@ -20,10 +16,5 @@ export function WindowWidth() {
         };
     }, []);
 
-    return (
-        <>
-            <button onClick={() => handleToggle()}>Toggle</button>
-            {show && <div>Width: {windowWidth}</div>}
-        </>
-    )
+    return <div>Width: {windowWidth}</div>;
 }
