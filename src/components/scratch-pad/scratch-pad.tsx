@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Box } from './box';
 import { boxes } from './boxes';
 import { StarWarsData } from './star-wars-data';
+import { WindowWidth } from './window-width';
 
 function ScratchPad() {
     const [isShown, setIsShown] = useState(false);
@@ -125,6 +126,11 @@ function ScratchPad() {
         setStarWarsFormData(prevData => {
             return { ...prevData, [name]: value };
         });
+    };
+
+    const [showWindowWidth, setShowWindowWidth] = useState(true);
+    const handleShowWidthToggle = () => {
+        setShowWindowWidth(prevValue => !prevValue);
     };
 
     return (
@@ -267,6 +273,8 @@ function ScratchPad() {
             { !loadingStarWarsData && <p>Hair Color: {starWarsData.hair_color}</p> }
             { !loadingStarWarsData && <p>Height: {starWarsData.height}</p> }
             { !loadingStarWarsData && <p>Mass: {starWarsData.mass}</p> }
+            <button onClick={() => handleShowWidthToggle()}>Toggle</button>
+            { showWindowWidth && <WindowWidth></WindowWidth> }
         </>
     )
 }
