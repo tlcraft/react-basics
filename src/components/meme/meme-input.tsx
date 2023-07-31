@@ -34,16 +34,16 @@ function MemeInput() {
     }
 
     useEffect(() => {
-        fetch('https://api.imgflip.com/get_memes')
-            .then(res => {
-                if(res.ok) {
-                    res.json()
-                    .then(data => setMemeList(data));
-                }
-
-                return Promise.reject(res);
-            })
-            .catch(error => console.log(error));
+        const getMemes = async () => {
+            const res = await fetch('https://api.imgflip.com/get_memes');
+            if(res && res.ok) {
+                const data = await res.json();
+                setMemeList(data);
+            } else {
+                console.log(res);
+            }
+        }
+        getMemes();
     }, []);
 
     return (
