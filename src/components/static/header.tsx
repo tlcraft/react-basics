@@ -9,6 +9,7 @@ interface HeaderProps {
     navigateToVrbo: () => void;
     navigateToMeme: () => void;
     navigateToScratchPad: () => void;
+    toggleDarkMode: () => void;
 }
 
 function Header(props: HeaderProps) {
@@ -24,6 +25,18 @@ function Header(props: HeaderProps) {
                 <li onClick={props.navigateToMeme}>Meme</li>
                 <li onClick={props.navigateToScratchPad}>Scratch Pad</li>
             </ul>
+            <div 
+                className="toggler" 
+            >
+                <p className="toggler--light">Light</p>
+                <div 
+                    className="toggler--slider"
+                    onClick={props.toggleDarkMode}
+                >
+                    <div className="toggler--slider--circle"></div>
+                </div>
+                <p className="toggler--dark">Dark</p>
+            </div>
         </nav>
     )
 }
