@@ -21,7 +21,8 @@ function App() {
     navigateToCard: () => navigate('/card'),
     navigateToVrbo: () => navigate('/vrbo'),
     navigateToMeme: () => navigate('/meme'),
-    navigateToScratchPad: () => navigate('/scratch-pad')
+    navigateToScratchPad: () => navigate('/scratch-pad'),
+    toggleDarkMode: () => { console.log("Toggle Dark Mode"); }
   };
 
   return (
