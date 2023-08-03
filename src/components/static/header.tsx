@@ -10,11 +10,12 @@ interface HeaderProps {
     navigateToMeme: () => void;
     navigateToScratchPad: () => void;
     toggleDarkMode: () => void;
+    darkMode: boolean;
 }
 
 function Header(props: HeaderProps) {
     return (
-        <nav className='main-nav'>
+        <nav className={props.darkMode ? "dark main-nav": "main-nav"}>
             <img src={logo} className="App-logo" alt="logo" />
             <h3>React Sample App</h3>
             <ul className="nav-items">

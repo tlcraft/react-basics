@@ -22,7 +22,8 @@ function App() {
     navigateToVrbo: () => navigate('/vrbo'),
     navigateToMeme: () => navigate('/meme'),
     navigateToScratchPad: () => navigate('/scratch-pad'),
-    toggleDarkMode: () => { console.log("Toggle Dark Mode"); }
+    toggleDarkMode: () => { console.log("Toggle Dark Mode"); },
+    darkMode: false
   };
 
   return (
