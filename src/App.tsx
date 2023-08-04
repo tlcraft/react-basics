@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Body from './components/static/body';
 import Footer from './components/static/footer';
 import Header from './components/static/header';
@@ -14,6 +14,7 @@ import ScratchPad from './components/scratch-pad/scratch-pad';
 function App() {
 
   const navigate = useNavigate();
+  const [darkMode, setDarkMode] = useState(false);
 
   const headerProps = {
     navigateToStaticPage: () => navigate('/'),
@@ -22,8 +23,8 @@ function App() {
     navigateToVrbo: () => navigate('/vrbo'),
     navigateToMeme: () => navigate('/meme'),
     navigateToScratchPad: () => navigate('/scratch-pad'),
-    toggleDarkMode: () => { console.log("Toggle Dark Mode"); },
-    darkMode: false
+    toggleDarkMode: () => { setDarkMode(prevValue => !prevValue); },
+    darkMode: darkMode
   };
 
   return (
