@@ -29,6 +29,11 @@
   padding: 10px;
 }
 
+.dark.main-nav {
+  color: white;
+  background-color: black;
+}
+
 .nav-items {
   display: flex;
   list-style: none;
