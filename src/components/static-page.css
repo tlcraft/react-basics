@@ -18,3 +18,11 @@ ol {
     display: inline-block;
     text-align: left;
 }
+
+.dark-mode h2 {
+    color: white;
+}
+
+.dark-mode ol {
+    color: white;
+}
