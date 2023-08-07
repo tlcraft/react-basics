@@ -6,3 +6,7 @@
 .footer-spacing {
   margin-bottom: 50px;
 }
+
+.dark-mode {
+  background-color: black;
+}
