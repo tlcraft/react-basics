@@ -27,12 +27,16 @@ function App() {
     darkMode: darkMode
   };
 
+  const staticPageProps = {
+    darkMode: darkMode
+  }
+
   return (
     <>
-      <div className="App">
+      <div className={ darkMode ? "dark-mode App" : "App" }>
         <Header {...headerProps}/>
         <Routes>
-            <Route path="/" element={<StaticPage />} />
+            <Route path="/" element={<StaticPage {...staticPageProps } />} />
             <Route path="/card" element={<BusinessCard />} />
             <Route path="/body" element={<Body />} />
             <Route path="/vrbo" element={<Vrbo />} />
