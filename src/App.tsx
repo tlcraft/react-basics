@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Body from './components/static/body';
 import Footer from './components/static/footer';
 import Header from './components/static/header';
@@ -30,6 +30,14 @@ function App() {
   const staticPageProps = {
     darkMode: darkMode
   }
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [darkMode]);
 
   return (
     <>
