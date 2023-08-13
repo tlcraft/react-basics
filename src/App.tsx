@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Body from './components/static/body';
 import Footer from './components/static/footer';
 import Header from './components/static/header';
@@ -14,6 +14,7 @@ import ScratchPad from './components/scratch-pad/scratch-pad';
 function App() {
 
   const navigate = useNavigate();
+  const [darkMode, setDarkMode] = useState(false);
 
   const headerProps = {
     navigateToStaticPage: () => navigate('/'),
@@ -21,15 +22,29 @@ function App() {
     navigateToCard: () => navigate('/card'),
     navigateToVrbo: () => navigate('/vrbo'),
     navigateToMeme: () => navigate('/meme'),
-    navigateToScratchPad: () => navigate('/scratch-pad')
+    navigateToScratchPad: () => navigate('/scratch-pad'),
+    toggleDarkMode: () => { setDarkMode(prevValue => !prevValue); },
+    darkMode: darkMode
   };
+
+  const staticPageProps = {
+    darkMode: darkMode
+  }
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [darkMode]);
 
   return (
     <>
-      <div className="App">
+      <div className={ darkMode ? "dark-mode App" : "App" }>
         <Header {...headerProps}/>
         <Routes>
-            <Route path="/" element={<StaticPage />} />
+            <Route path="/" element={<StaticPage {...staticPageProps } />} />
             <Route path="/card" element={<BusinessCard />} />
             <Route path="/body" element={<Body />} />
             <Route path="/vrbo" element={<Vrbo />} />

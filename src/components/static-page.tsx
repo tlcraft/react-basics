@@ -1,10 +1,14 @@
 import './static-page.css';
 import React from 'react';
 
-function StaticPage() {
+interface StaticPageProps {
+    darkMode: boolean;
+}
+
+function StaticPage(props: StaticPageProps) {
     const helloElement = <h1>Hello world!</h1>;
     return (
-        <>  
+        <div className={props.darkMode ? "dark-mode" : "" }>  
             <div className="App-banner">
                 { helloElement }
                 <p>
@@ -31,7 +35,7 @@ function StaticPage() {
                 <li>React is popular</li>
                 <li>Components are great</li>
             </ol>
-        </>
+        </div>
     )
 }
 

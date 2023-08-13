@@ -6,3 +6,24 @@
 .footer-spacing {
   margin-bottom: 50px;
 }
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode li {
+  color: white;
+}
+
+.dark-mode h2 {
+  color: white;
+}
+
+.dark-mode h3 {
+  color: white;
+}
+
+.dark-mode p {
+  color: white;
+}
