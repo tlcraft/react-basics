@@ -15,7 +15,7 @@ import Notes from './components/notes/notes';
 function App() {
 
   const navigate = useNavigate();
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const headerProps = {
     navigateToStaticPage: () => navigate('/'),
