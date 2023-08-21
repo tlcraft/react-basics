@@ -13,6 +13,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Add the React MDE package
+Use `npm i react-mde --legacy-peer-deps` after installing other dependencies.
+
+See this [Stack Overflow](https://stackoverflow.com/questions/73077186/react-mde-cant-install-on-react-18-2-0).
+
 ## Available Scripts
 
 In the project directory, you can run:
