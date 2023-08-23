@@ -4,7 +4,7 @@ import { Note } from "./note-interfaces";
 export interface SideBarProps {
     notes: any[];
     currentNote: Note;
-    setCurrentNoteId: (id: number) => void;
+    setCurrentNoteId: (id: string) => void;
     newNote: () => void;
 }
 
