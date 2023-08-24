@@ -5,7 +5,7 @@ import { Note } from "./note-interfaces";
 
 export interface EditorProps {
     currentNote: Note;
-    updateNote: () => void;
+    updateNote: (text: string) => void;
 }
 
 export default function Editor(props: EditorProps) {
