@@ -1,3 +1,4 @@
+import './notes.css';
 import React from 'react';
 import Editor from './editor';
 import Split from "react-split"
