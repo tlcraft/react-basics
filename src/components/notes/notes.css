@@ -15,3 +15,7 @@
     align-items: center;
     background-color: whitesmoke;
 }
+
+.dark-mode .no-notes {
+    background-color: black;
+}
