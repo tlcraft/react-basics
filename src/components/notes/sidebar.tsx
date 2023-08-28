@@ -1,3 +1,4 @@
+import './sidebar.css';
 import React from "react";
 import { Note } from "./note-interfaces";
 
@@ -21,7 +22,7 @@ export default function Sidebar(props: SideBarProps) {
                 <h4 className="text-snippet">Note {index + 1}</h4>
             </div>
         </div>
-    ))
+    ));
 
     return (
         <section className="pane sidebar">
@@ -31,5 +32,5 @@ export default function Sidebar(props: SideBarProps) {
             </div>
             {noteElements}
         </section>
-    )
+    );
 }
