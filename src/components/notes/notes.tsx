@@ -11,7 +11,7 @@ interface NotesProps {
 }
 
 function Notes(props: NotesProps) {
-    const [notes, setNotes] = React.useState([] as Note[]);
+    const [notes, setNotes] = React.useState(JSON.parse(localStorage.getItem("notes") || "[]") as Note[]);
     const [currentNoteId, setCurrentNoteId] = React.useState(
         (notes[0] && notes[0].id) || ""
     );
@@ -23,6 +23,7 @@ function Notes(props: NotesProps) {
         };
         setNotes(prevNotes => [newNote, ...prevNotes]);
         setCurrentNoteId(newNote.id);
+        localStorage.setItem("notes", JSON.stringify(notes));
     }
     
     function updateNote(text: string) {
@@ -31,6 +32,7 @@ function Notes(props: NotesProps) {
                 ? { ...oldNote, body: text }
                 : oldNote
         }));
+        localStorage.setItem("notes", JSON.stringify(notes));
     }
     
     function findCurrentNote() {
