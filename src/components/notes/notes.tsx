@@ -1,5 +1,5 @@
 import './notes.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Editor from './editor';
 import Split from "react-split"
 import Sidebar from './sidebar';
@@ -23,16 +23,18 @@ function Notes(props: NotesProps) {
         };
         setNotes(prevNotes => [newNote, ...prevNotes]);
         setCurrentNoteId(newNote.id);
-        localStorage.setItem("notes", JSON.stringify(notes));
     }
     
+    useEffect(() => {
+        localStorage.setItem("notes", JSON.stringify(notes));
+    }, [notes]);
+
     function updateNote(text: string) {
         setNotes(oldNotes => oldNotes.map(oldNote => {
             return oldNote.id === currentNoteId
                 ? { ...oldNote, body: text }
                 : oldNote
         }));
-        localStorage.setItem("notes", JSON.stringify(notes));
     }
     
     function findCurrentNote() {
