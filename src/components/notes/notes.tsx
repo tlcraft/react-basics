@@ -11,7 +11,7 @@ interface NotesProps {
 }
 
 function Notes(props: NotesProps) {
-    const [notes, setNotes] = React.useState(JSON.parse(localStorage.getItem("notes") || "[]") as Note[]);
+    const [notes, setNotes] = React.useState(() => JSON.parse(localStorage.getItem("notes") || "[]") as Note[]);
     const [currentNoteId, setCurrentNoteId] = React.useState(
         (notes[0] && notes[0].id) || ""
     );
