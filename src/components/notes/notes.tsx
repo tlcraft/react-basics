@@ -30,11 +30,14 @@ function Notes(props: NotesProps) {
     }, [notes]);
 
     function updateNote(text: string) {
-        const noteList = [ ...notes ];
-        const noteIndex = noteList.findIndex(oldNote => oldNote.id === currentNoteId);
-        const note = noteList.splice(noteIndex, 1)[0] as Note;
-        const newNote = { ...note, body: text };
-        noteList.unshift(newNote);
+        const noteList: Note[] = [];
+        notes.forEach(oldNote => {
+            if(oldNote.id === currentNoteId) {
+                noteList.unshift({ ...oldNote, body: text });
+            } else {
+                noteList.push(oldNote);
+            }
+        });
         setNotes(() => noteList);
     }
     
