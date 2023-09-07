@@ -50,7 +50,11 @@ function Notes(props: NotesProps) {
     const editorProps = {
         currentNote: findCurrentNote(),
         updateNote: updateNote
-    };          
+    };
+    
+    const deleteNote = (noteId: string) => {
+        console.log("Deleted: ", noteId);
+    };
 
     return (
         <div className={props.darkMode ? "dark-mode" : "" }>
@@ -67,6 +71,7 @@ function Notes(props: NotesProps) {
                     currentNote={findCurrentNote()}
                     setCurrentNoteId={setCurrentNoteId}
                     newNote={createNewNote}
+                    deleteNote={deleteNote}
                 />
                 {
                     currentNoteId && 
