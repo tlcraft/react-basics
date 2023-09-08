@@ -53,7 +53,8 @@ function Notes(props: NotesProps) {
     };
     
     const deleteNote = (noteId: string) => {
-        console.log("Deleted: ", noteId);
+        const remainingNotes = notes.filter(note => note.id !== noteId);
+        setNotes(() => remainingNotes);  
     };
 
     return (
