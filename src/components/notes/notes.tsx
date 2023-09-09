@@ -52,7 +52,7 @@ function Notes(props: NotesProps) {
         updateNote: updateNote
     };
     
-    const deleteNote = (noteId: string) => {
+    const deleteNote = (event: any, noteId: string) => {
         const remainingNotes = notes.filter(note => note.id !== noteId);
         setNotes(() => remainingNotes);  
     };

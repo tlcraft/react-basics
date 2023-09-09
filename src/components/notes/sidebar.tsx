@@ -7,7 +7,7 @@ export interface SideBarProps {
     currentNote: Note;
     setCurrentNoteId: (id: string) => void;
     newNote: () => void;
-    deleteNote: (id: string) => void;
+    deleteNote: (event: any, id: string) => void;
 }
 
 export default function Sidebar(props: SideBarProps) {
@@ -23,7 +23,7 @@ export default function Sidebar(props: SideBarProps) {
                 <h4 className="text-snippet">Note {index + 1} - {note.body.split('\n')[0].substring(0, 10)}</h4>
                 <button 
                     className="delete-btn"
-                    onClick={() => props.deleteNote(note.id)}
+                    onClick={(event) => props.deleteNote(event, note.id)}
                 >
                     <i className="gg-trash trash-icon"></i>
                 </button>
