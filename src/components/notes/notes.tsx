@@ -54,8 +54,7 @@ function Notes(props: NotesProps) {
     
     const deleteNote = (event: any, noteId: string) => {
         event.stopPropagation();
-        const remainingNotes = notes.filter(note => note.id !== noteId);
-        setNotes(() => remainingNotes);  
+        setNotes(oldNotes => oldNotes.filter(note => note.id !== noteId));  
     };
 
     return (
