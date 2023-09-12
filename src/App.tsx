@@ -9,12 +9,13 @@ import {Routes, Route, useNavigate} from 'react-router-dom';
 import Vrbo from './components/vrbo/vrbo';
 import Meme from './components/meme/meme';
 import ScratchPad from './components/scratch-pad/scratch-pad';
+import Notes from './components/notes/notes';
 
 
 function App() {
 
   const navigate = useNavigate();
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const headerProps = {
     navigateToStaticPage: () => navigate('/'),
@@ -23,11 +24,12 @@ function App() {
     navigateToVrbo: () => navigate('/vrbo'),
     navigateToMeme: () => navigate('/meme'),
     navigateToScratchPad: () => navigate('/scratch-pad'),
+    navigateToNotes: () => navigate('/notes'),
     toggleDarkMode: () => { setDarkMode(prevValue => !prevValue); },
     darkMode: darkMode
   };
 
-  const staticPageProps = {
+  const darkModeProps = {
     darkMode: darkMode
   }
 
@@ -44,12 +46,13 @@ function App() {
       <div className={ darkMode ? "dark-mode App" : "App" }>
         <Header {...headerProps}/>
         <Routes>
-            <Route path="/" element={<StaticPage {...staticPageProps } />} />
+            <Route path="/" element={<StaticPage {...darkModeProps } />} />
             <Route path="/card" element={<BusinessCard />} />
             <Route path="/body" element={<Body />} />
             <Route path="/vrbo" element={<Vrbo />} />
             <Route path="/meme" element={<Meme />} />
             <Route path="/scratch-pad" element={<ScratchPad />} />
+            <Route path="/notes" element={<Notes {...darkModeProps }/>} />
         </Routes>
         <div className="footer-spacing"></div>
       </div>
