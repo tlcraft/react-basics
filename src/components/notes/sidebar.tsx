@@ -11,7 +11,7 @@ export interface SideBarProps {
 }
 
 export default function Sidebar(props: SideBarProps) {
-    const noteElements = props.notes.map((note, index) => (
+    const noteElements = props.notes.map(note => (
         <div key={note.id}>
             <div
                 
@@ -20,7 +20,7 @@ export default function Sidebar(props: SideBarProps) {
                 }`}
                 onClick={() => props.setCurrentNoteId(note.id)}
             >
-                <h4 className="text-snippet">Note {index + 1} - {note.body.split('\n')[0].substring(0, 10)}</h4>
+                <h4 className="text-snippet">{note.body.split('\n')[0].substring(0, 10)}</h4>
                 <button 
                     className="delete-btn"
                     onClick={(event) => props.deleteNote(event, note.id)}
