@@ -32,11 +32,11 @@ function Notes(props: NotesProps) {
 
     function updateNote(text: string) {
         const noteList: Note[] = [];
-        notes.forEach(oldNote => {
-            if(oldNote.id === currentNoteId) {
-                noteList.unshift({ ...oldNote, body: text });
+        notes.forEach(note => {
+            if(note.id === currentNoteId) {
+                noteList.unshift({ ...note, body: text });
             } else {
-                noteList.push(oldNote);
+                noteList.push(note);
             }
         });
         setNotes(() => noteList);
