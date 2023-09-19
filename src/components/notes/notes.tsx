@@ -43,8 +43,8 @@ function Notes(props: NotesProps) {
     }
     
     const editorProps = {
-        currentNote: currentNote,
-        updateNote: updateNote
+        currentNote,
+        updateNote
     };
     
     const deleteNote = (event: any, noteId: string) => {
