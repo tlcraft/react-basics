@@ -15,6 +15,7 @@ function Notes(props: NotesProps) {
     const [currentNoteId, setCurrentNoteId] = React.useState(
         (notes[0] && notes[0].id) || ""
     );
+    const currentNote = notes.find(note => note.id === currentNoteId) || notes[0];
     
     function createNewNote() {
         const newNote = {
@@ -31,25 +32,19 @@ function Notes(props: NotesProps) {
 
     function updateNote(text: string) {
         const noteList: Note[] = [];
-        notes.forEach(oldNote => {
-            if(oldNote.id === currentNoteId) {
-                noteList.unshift({ ...oldNote, body: text });
+        notes.forEach(note => {
+            if(note.id === currentNoteId) {
+                noteList.unshift({ ...note, body: text });
             } else {
-                noteList.push(oldNote);
+                noteList.push(note);
             }
         });
         setNotes(() => noteList);
     }
     
-    function findCurrentNote() {
-        return notes.find(note => {
-            return note.id === currentNoteId
-        }) || notes[0];
-    }
-    
     const editorProps = {
-        currentNote: findCurrentNote(),
-        updateNote: updateNote
+        currentNote,
+        updateNote
     };
     
     const deleteNote = (event: any, noteId: string) => {
@@ -69,7 +64,7 @@ function Notes(props: NotesProps) {
             >
                 <Sidebar
                     notes={notes}
-                    currentNote={findCurrentNote()}
+                    currentNote={currentNote}
                     setCurrentNoteId={setCurrentNoteId}
                     newNote={createNewNote}
                     deleteNote={deleteNote}
