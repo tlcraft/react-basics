@@ -1,10 +1,10 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import Body from './components/static/body';
-import Footer from './components/static/footer';
-import Header from './components/static/header';
-import StaticPage from './components/static-page';
-import BusinessCard from './components/business-card';
+import Body from './components/page-layout/body';
+import Footer from './components/page-layout/footer';
+import Header from './components/page-layout/header';
+import StaticPage from './components/static-page/static-page';
+import BusinessCard from './components/business-card/business-card';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import Vrbo from './components/vrbo/vrbo';
 import Meme from './components/meme/meme';
