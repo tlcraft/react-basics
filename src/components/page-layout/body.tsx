@@ -2,7 +2,7 @@ import './body.css';
 import React, { useState, useEffect } from 'react';
 import increment from '../../services/counter';
 import UnorderedList from './unordered-list';
-import NameDisplay from '../../components/name-display';
+import NameDisplay from './name-display';
 
 function Body() {
     const [count, setCount] = useState(0);

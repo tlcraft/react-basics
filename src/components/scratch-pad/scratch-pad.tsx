@@ -61,6 +61,7 @@ function ScratchPad() {
     const handleSubmit = (event: any) => { 
         event.preventDefault(); 
         console.log("Form Data: ", formData);
+        alert("Thanks for submitting the form!");
     };
 
     const [signUpFormData, setSignUpFormData] = useState(

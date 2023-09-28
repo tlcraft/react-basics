@@ -1,9 +1,9 @@
 import './business-card.css'
 import React from 'react';
-import CardAbout from './business-card/card-about';
-import CardFooter from './business-card/card-footer';
-import CardInfo from './business-card/card-info';
-import CardInterests from './business-card/card-interests';
+import CardAbout from './card-about';
+import CardFooter from './card-footer';
+import CardInfo from './card-info';
+import CardInterests from './card-interests';
 
 function BusinessCard() {
     return (
