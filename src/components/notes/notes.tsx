@@ -68,12 +68,8 @@ function Notes(props: NotesProps) {
                     setCurrentNoteId={setCurrentNoteId}
                     newNote={createNewNote}
                     deleteNote={deleteNote}
-                />
-                {
-                    currentNoteId && 
-                    notes.length > 0 &&
-                    <Editor { ...editorProps } /> 
-                }
+                />                                    
+                <Editor { ...editorProps } />
             </Split>
             :
             <div className="no-notes">
