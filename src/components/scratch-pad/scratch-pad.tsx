@@ -157,9 +157,9 @@ function ScratchPad() {
             <form className="name-form" onSubmit={handleSubmit}>
                 <input type="text" name="firstName" placeholder="First Name" onChange={handleChange} value={formData.firstName} />
                 <input type="text" name="lastName" placeholder="Last Name" onChange={handleChange} value={formData.lastName} />
-                <input type="text" name="email" placeholder="Email" onChange={handleChange} value={formData.email} />
+                <input type="text" name="email" placeholder="Email" onChange={handleChange} value={formData.email} autoComplete='email' />
                 <textarea name="comment" placeholder="Comments..." onChange={handleChange} value={formData.comment}></textarea>
-                <input type="checkbox" name="isFriendly" checked={formData.isFriendly} onChange={handleChange} />
+                <input id="isFriendly" type="checkbox" name="isFriendly" checked={formData.isFriendly} onChange={handleChange} />
                 <label htmlFor="isFriendly">Are you friendly?</label>
                 <fieldset>
                     <legend>Current employment status</legend>
@@ -231,6 +231,7 @@ function ScratchPad() {
                     placeholder="Email address"
                     value={signUpFormData.email}
                     onChange={handleSignUpChange}
+                    autoComplete='email'
                 />
                 <input 
                     type="password" 
