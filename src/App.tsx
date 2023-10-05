@@ -10,6 +10,7 @@ import Vrbo from './components/vrbo/vrbo';
 import Meme from './components/meme/meme';
 import ScratchPad from './components/scratch-pad/scratch-pad';
 import Notes from './components/notes/notes';
+import Tenzies from './components/tenzies/tenzies';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     navigateToMeme: () => navigate('/meme'),
     navigateToScratchPad: () => navigate('/scratch-pad'),
     navigateToNotes: () => navigate('/notes'),
+    navigateToTenzies: () => navigate('/tenzies'),
     toggleDarkMode: () => { setDarkMode(prevValue => !prevValue); },
     darkMode: darkMode
   };
@@ -53,6 +55,7 @@ function App() {
             <Route path="/meme" element={<Meme />} />
             <Route path="/scratch-pad" element={<ScratchPad />} />
             <Route path="/notes" element={<Notes {...darkModeProps }/>} />
+            <Route path="/tenzies" element={<Tenzies />} />
         </Routes>
         <div className="footer-spacing"></div>
       </div>
