@@ -1,6 +1,6 @@
 .board {
-    width: 350px;
-    height: 350px;
+    max-width: 650px;
+    height: 400px;
     background-color: #F5F5F5;
     margin: auto;
     margin-top: 20px;
