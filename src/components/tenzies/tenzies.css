@@ -1,0 +1,7 @@
+.board {
+    width: 350px;
+    height: 350px;
+    background-color: #F5F5F5;
+    margin: auto;
+    margin-top: 20px;
+}

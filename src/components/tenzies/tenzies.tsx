@@ -1,8 +1,9 @@
+import './tenzies.css'
 import React from 'react';
 
 function Tenzies() {
     return (
-        <div>Tenzies Placeholder</div>
+            <div className='board'></div>
     )
 }
 
