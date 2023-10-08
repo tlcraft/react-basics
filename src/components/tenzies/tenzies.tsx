@@ -3,7 +3,7 @@ import React from 'react';
 
 function Tenzies() {
     return (
-            <div className='board'></div>
+        <div className='board'></div>
     )
 }
 
