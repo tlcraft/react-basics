@@ -1,8 +1,7 @@
-import './tenzies.css'
 import React from 'react';
 
 export interface DieProps {
-    roll: () => string;
+    roll: () => number;
 }
 
 function Die(props: DieProps) {
