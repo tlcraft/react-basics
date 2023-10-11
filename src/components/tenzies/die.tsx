@@ -1,3 +1,4 @@
+import './die.css'
 import React from 'react';
 
 export interface DieProps {
