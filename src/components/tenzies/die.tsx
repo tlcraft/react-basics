@@ -2,18 +2,14 @@ import './die.css'
 import React from 'react';
 
 export interface DieProps {
-    roll: () => number;
+    value: number;
+    id: number;
+    save: (id: number) => void;
 }
 
 function Die(props: DieProps) {
-    const [value, setValue] = React.useState(props.roll());
-
-    const rollDie = () => {
-        setValue(() => props.roll());
-    }
-
     return (
-        <div className='die' onClick={rollDie}>{value}</div>
+        <div className='die' onClick={() => props.save(props.id)}>{props.value}</div>
     )
 }
 
