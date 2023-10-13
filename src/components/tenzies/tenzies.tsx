@@ -4,14 +4,31 @@ import React from 'react';
 
 function Tenzies() {
     const random = () => Math.floor(Math.random() * 6) + 1;
+    const [dice, setDice] = React.useState(
+        [
+            { id: 1, hold: false, value: random() },
+            { id: 2, hold: false, value: random() }
+        ]
+    );
 
-    const dieProps = {
-        roll: random,
+    const dieElements = dice.map((die, index) => {
+        const dieProps = {
+            value: die.value,
+            id: die.id,
+            save: (id: number) => console.log("Toggle Hold ", die.id, die.value),
+        };
+
+        return <Die key={index} {...dieProps} />
+    });
+
+    const roll = () => {
+        console.log("Rolled Dice");
     };
 
     return (
         <div className='board'>
-            <Die {...dieProps} />
+            {dieElements}
+            <button className="roll" onClick={roll}>Roll</button>
         </div>
     )
 }
