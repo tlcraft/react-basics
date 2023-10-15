@@ -22,7 +22,19 @@ function Tenzies() {
     });
 
     const roll = () => {
-        console.log("Rolled Dice");
+        const rolledDice = dice.map(die => {
+            if (die.hold) {
+                return die;
+            }
+
+            return {
+                id: die.id,
+                value: random(),
+                hold: die.hold
+            };
+        });
+        
+        setDice(rolledDice);
     };
 
     return (
