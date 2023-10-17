@@ -15,7 +15,17 @@ function Tenzies() {
         const dieProps = {
             value: die.value,
             id: die.id,
-            save: (id: number) => console.log("Toggle Hold ", die.id, die.value),
+            save: (id: number) => {
+                setDice(dice => {
+                    return dice.map(die => {
+                        if (die.id === id) {
+                            return { ...die, hold: !die.hold };
+                        }
+
+                        return die;
+                    })
+                })
+            },
         };
 
         return <Die key={index} {...dieProps} />
