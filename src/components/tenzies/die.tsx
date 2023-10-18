@@ -1,15 +1,16 @@
 import './die.css'
 import React from 'react';
+import { Dice } from './tenzies';
 
 export interface DieProps {
-    value: number;
-    id: number;
+    die: Dice;
     save: (id: number) => void;
 }
 
 function Die(props: DieProps) {
+    const { die } = props;
     return (
-        <div className='die' onClick={() => props.save(props.id)}>{props.value}</div>
+        <div className={die.hold ? 'hold die' : 'die'} onClick={() => props.save(die.id)}>{die.value}</div>
     )
 }
 
