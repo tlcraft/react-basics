@@ -2,19 +2,24 @@ import './tenzies.css'
 import Die from './die';
 import React from 'react';
 
+export interface Dice {
+    id: number;
+    hold: boolean;
+    value: number;
+}
+
 function Tenzies() {
     const random = () => Math.floor(Math.random() * 6) + 1;
     const [dice, setDice] = React.useState(
         [
             { id: 1, hold: false, value: random() },
             { id: 2, hold: false, value: random() }
-        ]
+        ] as Dice[]
     );
 
     const dieElements = dice.map((die, index) => {
         const dieProps = {
-            value: die.value,
-            id: die.id,
+            die,
             save: (id: number) => {
                 setDice(dice => {
                     return dice.map(die => {
