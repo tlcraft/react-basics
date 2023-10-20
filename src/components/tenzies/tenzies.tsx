@@ -13,9 +13,19 @@ function Tenzies() {
     const [dice, setDice] = React.useState(
         [
             { id: 1, hold: false, value: random() },
-            { id: 2, hold: false, value: random() }
+            { id: 2, hold: false, value: random() },
+            { id: 3, hold: false, value: random() },
+            { id: 4, hold: false, value: random() },
+            { id: 5, hold: false, value: random() },
+            { id: 6, hold: false, value: random() },
+            { id: 7, hold: false, value: random() },
+            { id: 8, hold: false, value: random() },
+            { id: 9, hold: false, value: random() },
+            { id: 10, hold: false, value: random() }
         ] as Dice[]
     );
+
+    const [target, setTarget] = React.useState(random());
 
     const dieElements = dice.map((die, index) => {
         const dieProps = {
@@ -55,6 +65,7 @@ function Tenzies() {
     return (
         <div className='board'>
             {dieElements}
+            <p className='target'>Roll a {target}!</p>
             <button className="roll" onClick={roll}>Roll</button>
         </div>
     )
