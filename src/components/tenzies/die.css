@@ -6,8 +6,15 @@ div.die {
     border-radius: 3px;
     max-width: 25px;
     height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    font-size: 2rem;
 }
 
 div.hold {
-    border: 1px solid red;
+    border: 1px solid green;
+    background-color: limegreen;
 }
