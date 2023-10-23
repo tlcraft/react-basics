@@ -64,7 +64,9 @@ function Tenzies() {
 
     return (
         <div className='board'>
-            {dieElements}
+            <div className='dice'>
+                {dieElements}
+            </div>
             <p className='target'>Roll a {target}!</p>
             <button className="roll" onClick={roll}>Roll</button>
         </div>

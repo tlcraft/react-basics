@@ -5,7 +5,12 @@
     margin: auto;
     margin-top: 20px;
     border-radius: 5px;
+}
+
+.dice {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .roll {
