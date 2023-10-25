@@ -5,15 +5,20 @@
     margin: auto;
     margin-top: 20px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .dice {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 20px;
 }
 
-.roll {
+.roll-btn {
     max-height: 40px;
     margin: 10px;
 }
