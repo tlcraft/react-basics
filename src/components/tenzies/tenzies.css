@@ -1,0 +1,28 @@
+.board {
+    max-width: 650px;
+    height: 400px;
+    background-color: #F5F5F5;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.dice {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 20px;
+}
+
+.roll-btn {
+    max-height: 40px;
+    margin: 10px;
+}
+
+p.target {
+    color: black;
+}

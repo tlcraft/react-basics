@@ -1,0 +1,20 @@
+div.die {
+    color: black;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    max-width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    font-size: 2rem;
+}
+
+div.hold {
+    border: 1px solid green;
+    background-color: limegreen;
+}

@@ -10,6 +10,7 @@ interface HeaderProps {
     navigateToMeme: () => void;
     navigateToScratchPad: () => void;
     navigateToNotes: () => void;
+    navigateToTenzies: () => void;
     toggleDarkMode: () => void;
     darkMode: boolean;
 }
@@ -27,6 +28,7 @@ function Header(props: HeaderProps) {
                 <li onClick={props.navigateToMeme}>Meme</li>
                 <li onClick={props.navigateToScratchPad}>Scratch Pad</li>
                 <li onClick={props.navigateToNotes}>Notes</li>
+                <li onClick={props.navigateToTenzies}>Tenzies</li>
             </ul>
             <div 
                 className="toggler" 
