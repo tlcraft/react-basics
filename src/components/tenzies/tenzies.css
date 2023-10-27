@@ -19,10 +19,21 @@
 }
 
 .roll-btn {
-    max-height: 40px;
+    height: 45px;
+    width: 45px;
     margin: 10px;
+    color: white;
+    background-color: green;
+    border-color: green;
+    border-width: thick;
+    border-radius: 5px;
+}
+
+.roll-btn:hover {
+    border-color: darkgreen;
 }
 
 p.target {
     color: black;
+    font-size: 2em;
 }
