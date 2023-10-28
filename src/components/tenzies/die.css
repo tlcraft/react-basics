@@ -18,3 +18,7 @@ div.hold {
     border: 1px solid green;
     background-color: limegreen;
 }
+
+div.die:hover {
+    border-color: green;
+}
