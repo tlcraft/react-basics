@@ -30,14 +30,14 @@ function Tenzies() {
     const dieElements = dice.map((die, index) => {
         const dieProps = {
             die,
-            save: (id: number) => {
-                setDice(dice => {
-                    return dice.map(die => {
-                        if (die.id === id) {
-                            return { ...die, hold: !die.hold };
+            save: () => {
+                setDice(currentDice => {
+                    return currentDice.map(currentDie => {
+                        if (currentDie.id === die.id) {
+                            return { ...currentDie, hold: !currentDie.hold };
                         }
 
-                        return die;
+                        return currentDie;
                     })
                 })
             },
