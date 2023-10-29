@@ -33,7 +33,11 @@
     border-color: darkgreen;
 }
 
-p.target {
+.roll-btn:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+p.message {
     color: black;
     font-size: 2em;
 }

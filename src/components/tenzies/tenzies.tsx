@@ -1,6 +1,6 @@
 import './tenzies.css'
 import Die from './die';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export interface Dice {
     id: number;
@@ -10,6 +10,7 @@ export interface Dice {
 
 function Tenzies() {
     const random = () => Math.floor(Math.random() * 6) + 1;
+    const [hasWon, setHasWon] = React.useState(false);
     const [dice, setDice] = React.useState(
         [
             { id: 1, hold: false, value: random() },
@@ -62,12 +63,18 @@ function Tenzies() {
         setDice(rolledDice);
     };
 
+    useEffect(() => {
+        const hasWon = dice.every(die => die.value === target);
+        setHasWon(hasWon);
+    }, [dice]);
+
     return (
         <div className='board'>
             <div className='dice'>
                 {dieElements}
             </div>
-            <p className='target'>Roll a {target}!</p>
+            { !hasWon && <p className='message'>Roll a {target}!</p> }
+            { hasWon && <p className="message">You won!</p> }
             <button className="roll-btn" onClick={roll}>Roll</button>
         </div>
     )
