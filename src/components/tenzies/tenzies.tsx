@@ -77,12 +77,12 @@ function Tenzies() {
 
     return (
         <div className='board'>
+            <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
             <div className='dice'>
                 {dieElements}
             </div>
-            { !hasWon && <p className='message'>Roll a {target}!</p> }
-            { hasWon && <p className="message">You won!</p> && <button className="reset-btn" onClick={reset}>Reset</button> }
-            <button className="roll-btn" onClick={roll}>Roll</button>  
+            { !hasWon && <div><p className='message'>Roll a {target}!</p><button className="roll-btn" onClick={roll}>Roll</button></div> }
+            { hasWon && <div><p className="message">You won!</p><button className="reset-btn" onClick={reset}>Reset</button></div> }
         </div>
     )
 }
