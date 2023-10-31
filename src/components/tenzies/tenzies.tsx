@@ -63,6 +63,13 @@ function Tenzies() {
         setDice(rolledDice);
     };
 
+    const reset = () => {
+        setDice(currentDice => {
+           return currentDice.map(die => { return { ...die, hold: false, value: random() } }); 
+        });
+        setTarget(random());
+    };
+
     useEffect(() => {
         const hasWon = dice.every(die => die.value === target);
         setHasWon(hasWon);
@@ -74,8 +81,8 @@ function Tenzies() {
                 {dieElements}
             </div>
             { !hasWon && <p className='message'>Roll a {target}!</p> }
-            { hasWon && <p className="message">You won!</p> }
-            <button className="roll-btn" onClick={roll}>Roll</button>
+            { hasWon && <p className="message">You won!</p> && <button className="reset-btn" onClick={reset}>Reset</button> }
+            <button className="roll-btn" onClick={roll}>Roll</button>  
         </div>
     )
 }
