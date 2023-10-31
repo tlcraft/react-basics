@@ -37,6 +37,25 @@
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
+.reset-btn {
+    height: 45px;
+    width: 65px;
+    margin: 10px;
+    color: white;
+    background-color: blue;
+    border-color: blue;
+    border-width: thick;
+    border-radius: 5px;
+}
+
+.reset-btn:hover {
+    border-color: darkblue;
+}
+
+.resset-btn:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
 p.message {
     color: black;
     font-size: 2em;
