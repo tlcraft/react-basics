@@ -4,13 +4,13 @@ import { Dice } from './tenzies';
 
 export interface DieProps {
     die: Dice;
-    save: (id: number) => void;
+    save: () => void;
 }
 
 function Die(props: DieProps) {
     const { die } = props;
     return (
-        <div className={die.hold ? 'hold die' : 'die'} onClick={() => props.save(die.id)}>{die.value}</div>
+        <div className={die.hold ? 'hold die' : 'die'} onClick={() => props.save()}>{die.value}</div>
     )
 }
 

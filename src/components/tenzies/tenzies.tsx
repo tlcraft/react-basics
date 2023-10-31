@@ -1,6 +1,6 @@
 import './tenzies.css'
 import Die from './die';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export interface Dice {
     id: number;
@@ -10,6 +10,7 @@ export interface Dice {
 
 function Tenzies() {
     const random = () => Math.floor(Math.random() * 6) + 1;
+    const [hasWon, setHasWon] = React.useState(false);
     const [dice, setDice] = React.useState(
         [
             { id: 1, hold: false, value: random() },
@@ -30,14 +31,14 @@ function Tenzies() {
     const dieElements = dice.map((die, index) => {
         const dieProps = {
             die,
-            save: (id: number) => {
-                setDice(dice => {
-                    return dice.map(die => {
-                        if (die.id === id) {
-                            return { ...die, hold: !die.hold };
+            save: () => {
+                setDice(currentDice => {
+                    return currentDice.map(currentDie => {
+                        if (currentDie.id === die.id) {
+                            return { ...currentDie, hold: !currentDie.hold };
                         }
 
-                        return die;
+                        return currentDie;
                     })
                 })
             },
@@ -62,13 +63,26 @@ function Tenzies() {
         setDice(rolledDice);
     };
 
+    const reset = () => {
+        setDice(currentDice => {
+           return currentDice.map(die => { return { ...die, hold: false, value: random() } }); 
+        });
+        setTarget(random());
+    };
+
+    useEffect(() => {
+        const hasWon = dice.every(die => die.value === target);
+        setHasWon(hasWon);
+    }, [dice]);
+
     return (
         <div className='board'>
+            <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
             <div className='dice'>
                 {dieElements}
             </div>
-            <p className='target'>Roll a {target}!</p>
-            <button className="roll-btn" onClick={roll}>Roll</button>
+            { !hasWon && <div><p className='message'>Roll a {target}!</p><button className="roll-btn" onClick={roll}>Roll</button></div> }
+            { hasWon && <div><p className="message">You won!</p><button className="reset-btn" onClick={reset}>Reset</button></div> }
         </div>
     )
 }
