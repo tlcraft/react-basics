@@ -1,6 +1,7 @@
 import './tenzies.css'
 import Die from './die';
 import React, { useEffect } from 'react';
+import Confetti from 'react-confetti';
 
 export interface Dice {
     id: number;
@@ -82,7 +83,7 @@ function Tenzies() {
                 {dieElements}
             </div>
             { !hasWon && <div><p className='message'>Roll a {target}!</p><button className="roll-btn" onClick={roll}>Roll</button></div> }
-            { hasWon && <div><p className="message">You won!</p><button className="reset-btn" onClick={reset}>Reset</button></div> }
+            { hasWon && <div><Confetti /><p className="message">You won!</p><button className="reset-btn" onClick={reset}>Reset</button></div> }
         </div>
     )
 }
