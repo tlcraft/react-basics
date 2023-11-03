@@ -10,24 +10,24 @@ export interface Dice {
 }
 
 function Tenzies() {
-    const random = () => Math.floor(Math.random() * 6) + 1;
+    const randomRoll = () => Math.floor(Math.random() * 6) + 1;
     const [hasWon, setHasWon] = React.useState(false);
     const [dice, setDice] = React.useState(
         [
-            { id: 1, hold: false, value: random() },
-            { id: 2, hold: false, value: random() },
-            { id: 3, hold: false, value: random() },
-            { id: 4, hold: false, value: random() },
-            { id: 5, hold: false, value: random() },
-            { id: 6, hold: false, value: random() },
-            { id: 7, hold: false, value: random() },
-            { id: 8, hold: false, value: random() },
-            { id: 9, hold: false, value: random() },
-            { id: 10, hold: false, value: random() }
+            { id: 1, hold: false, value: randomRoll() },
+            { id: 2, hold: false, value: randomRoll() },
+            { id: 3, hold: false, value: randomRoll() },
+            { id: 4, hold: false, value: randomRoll() },
+            { id: 5, hold: false, value: randomRoll() },
+            { id: 6, hold: false, value: randomRoll() },
+            { id: 7, hold: false, value: randomRoll() },
+            { id: 8, hold: false, value: randomRoll() },
+            { id: 9, hold: false, value: randomRoll() },
+            { id: 10, hold: false, value: randomRoll() }
         ] as Dice[]
     );
 
-    const [target, setTarget] = React.useState(random());
+    const [target, setTarget] = React.useState(randomRoll());
 
     const dieElements = dice.map((die, index) => {
         const dieProps = {
@@ -55,9 +55,8 @@ function Tenzies() {
             }
 
             return {
-                id: die.id,
-                value: random(),
-                hold: die.hold
+                ...die,
+                value: randomRoll(),
             };
         });
         
@@ -66,9 +65,9 @@ function Tenzies() {
 
     const reset = () => {
         setDice(currentDice => {
-           return currentDice.map(die => { return { ...die, hold: false, value: random() } }); 
+           return currentDice.map(die => { return { ...die, hold: false, value: randomRoll() } }); 
         });
-        setTarget(random());
+        setTarget(randomRoll());
     };
 
     useEffect(() => {
