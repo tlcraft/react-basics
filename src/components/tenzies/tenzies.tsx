@@ -1,6 +1,7 @@
 import './tenzies.css'
 import Die from './die';
 import React, { useEffect } from 'react';
+import Confetti from 'react-confetti';
 
 export interface Dice {
     id: number;
@@ -9,24 +10,25 @@ export interface Dice {
 }
 
 function Tenzies() {
-    const random = () => Math.floor(Math.random() * 6) + 1;
+    const randomRoll = () => Math.floor(Math.random() * 6) + 1;
     const [hasWon, setHasWon] = React.useState(false);
+    const [rollCount, setRollCount] = React.useState(0);
     const [dice, setDice] = React.useState(
         [
-            { id: 1, hold: false, value: random() },
-            { id: 2, hold: false, value: random() },
-            { id: 3, hold: false, value: random() },
-            { id: 4, hold: false, value: random() },
-            { id: 5, hold: false, value: random() },
-            { id: 6, hold: false, value: random() },
-            { id: 7, hold: false, value: random() },
-            { id: 8, hold: false, value: random() },
-            { id: 9, hold: false, value: random() },
-            { id: 10, hold: false, value: random() }
+            { id: 1, hold: false, value: randomRoll() },
+            { id: 2, hold: false, value: randomRoll() },
+            { id: 3, hold: false, value: randomRoll() },
+            { id: 4, hold: false, value: randomRoll() },
+            { id: 5, hold: false, value: randomRoll() },
+            { id: 6, hold: false, value: randomRoll() },
+            { id: 7, hold: false, value: randomRoll() },
+            { id: 8, hold: false, value: randomRoll() },
+            { id: 9, hold: false, value: randomRoll() },
+            { id: 10, hold: false, value: randomRoll() }
         ] as Dice[]
     );
 
-    const [target, setTarget] = React.useState(random());
+    const [target, setTarget] = React.useState(randomRoll());
 
     const dieElements = dice.map((die, index) => {
         const dieProps = {
@@ -54,20 +56,21 @@ function Tenzies() {
             }
 
             return {
-                id: die.id,
-                value: random(),
-                hold: die.hold
+                ...die,
+                value: randomRoll(),
             };
         });
         
         setDice(rolledDice);
+        setRollCount(currentCount => ++currentCount);
     };
 
     const reset = () => {
         setDice(currentDice => {
-           return currentDice.map(die => { return { ...die, hold: false, value: random() } }); 
+           return currentDice.map(die => { return { ...die, hold: false, value: randomRoll() } }); 
         });
-        setTarget(random());
+        setTarget(randomRoll());
+        setRollCount(0);
     };
 
     useEffect(() => {
@@ -82,7 +85,8 @@ function Tenzies() {
                 {dieElements}
             </div>
             { !hasWon && <div><p className='message'>Roll a {target}!</p><button className="roll-btn" onClick={roll}>Roll</button></div> }
-            { hasWon && <div><p className="message">You won!</p><button className="reset-btn" onClick={reset}>Reset</button></div> }
+            { hasWon && <div><Confetti /><p className="message">You won!</p><button className="reset-btn" onClick={reset}>Reset</button></div> }
+            <p className="roll-count">Number of rolls: { rollCount }</p>
         </div>
     )
 }

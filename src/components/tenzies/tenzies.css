@@ -68,3 +68,7 @@ p.instructions {
     text-align: center;
     color: black;
 }
+
+p.roll-count {
+    color: black;
+}
