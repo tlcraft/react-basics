@@ -12,6 +12,7 @@ export interface Dice {
 function Tenzies() {
     const randomRoll = () => Math.floor(Math.random() * 6) + 1;
     const [hasWon, setHasWon] = React.useState(false);
+    const [rollCount, setRollCount] = React.useState(0);
     const [dice, setDice] = React.useState(
         [
             { id: 1, hold: false, value: randomRoll() },
@@ -61,6 +62,7 @@ function Tenzies() {
         });
         
         setDice(rolledDice);
+        setRollCount(currentCount => ++currentCount);
     };
 
     const reset = () => {
@@ -68,6 +70,7 @@ function Tenzies() {
            return currentDice.map(die => { return { ...die, hold: false, value: randomRoll() } }); 
         });
         setTarget(randomRoll());
+        setRollCount(0);
     };
 
     useEffect(() => {
@@ -83,6 +86,7 @@ function Tenzies() {
             </div>
             { !hasWon && <div><p className='message'>Roll a {target}!</p><button className="roll-btn" onClick={roll}>Roll</button></div> }
             { hasWon && <div><Confetti /><p className="message">You won!</p><button className="reset-btn" onClick={reset}>Reset</button></div> }
+            <p className="roll-count">Number of rolls: { rollCount }</p>
         </div>
     )
 }
