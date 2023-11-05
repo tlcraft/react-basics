@@ -12,6 +12,7 @@ export interface Dice {
 function Tenzies() {
     const randomRoll = () => Math.floor(Math.random() * 6) + 1;
     const [hasWon, setHasWon] = React.useState(false);
+    const [lowestRollCount, setLowestRollCount] = React.useState(() => +JSON.parse(localStorage.getItem("lowestRollCount") || "0"));
     const [rollCount, setRollCount] = React.useState(0);
     const [dice, setDice] = React.useState(
         [
@@ -71,6 +72,10 @@ function Tenzies() {
         });
         setTarget(randomRoll());
         setRollCount(0);
+        if(lowestRollCount > rollCount || lowestRollCount === 0) {
+            setLowestRollCount(rollCount);
+            localStorage.setItem("lowestRollCount", JSON.stringify(rollCount));
+        }
     };
 
     useEffect(() => {
@@ -87,6 +92,7 @@ function Tenzies() {
             { !hasWon && <div><p className='message'>Roll a {target}!</p><button className="roll-btn" onClick={roll}>Roll</button></div> }
             { hasWon && <div><Confetti /><p className="message">You won!</p><button className="reset-btn" onClick={reset}>Reset</button></div> }
             <p className="roll-count">Number of rolls: { rollCount }</p>
+            <p className="roll-count">Lowest Roll Count: { lowestRollCount !== 0 ? lowestRollCount : "-" }</p>
         </div>
     )
 }
