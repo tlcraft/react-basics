@@ -1,6 +1,5 @@
 .board {
     max-width: 650px;
-    height: 400px;
     background-color: #F5F5F5;
     margin: auto;
     margin-top: 20px;
@@ -10,6 +9,7 @@
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
+    padding: 10px;
 }
 
 .dice {
