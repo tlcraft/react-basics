@@ -13,24 +13,26 @@ function Die(props: DieProps) {
     const getDieStyle = () => {
         switch(props.die.value) {
             case 1:
-                return 'one';
+                return 'die one';
             case 2:
-                return 'two';
+                return 'die two';
             case 3:
-                return 'three';
+                return 'die three';
             case 4:
-                return 'four';
+                return 'die four';
             case 5: 
-                return 'five';
+                return 'die five';
             case 6:
-                return 'six';
+                return 'die six';
             default:
                 throw new Error("Value not defined.");
         }
     };
 
+    const dieStyle = getDieStyle();
+    
     return (
-        <div className={die.hold ? `hold die ${getDieStyle()}` : `die ${getDieStyle()}`} onClick={() => props.save()}>{die.value}</div>
+        <div className={die.hold ? `hold ${dieStyle}` : `${dieStyle}`} onClick={() => props.save()}>{die.value}</div>
     )
 }
 
