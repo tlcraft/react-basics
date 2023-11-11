@@ -7,8 +7,6 @@ div.die {
     width: 25px;
     height: 25px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
     background-color: white;
     font-size: 2rem;
@@ -32,6 +30,38 @@ div.one {
 div.two {
     display: flex;
     justify-content : space-between;
+}
+
+div.two .dot:nth-of-type(2) {
+    align-self: flex-end;
+}
+
+div.three {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.three .dot:nth-of-type(1) {
+    align-self: flex-end;
+}
+
+div.three .dot:nth-of-type(2) {
+    align-self: center;
+}
+
+div.four, div.five, div.six {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.four .column , div.five .column, div.six .column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.five .column:nth-of-type(2) {
+    justify-content: center;
 }
 
 .dot {
