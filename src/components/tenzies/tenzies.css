@@ -47,6 +47,7 @@
     border-color: blue;
     border-width: thick;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .reset-btn:hover {
