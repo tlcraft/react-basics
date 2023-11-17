@@ -26,3 +26,7 @@ button:focus {
 .gutter.gutter-horizontal:hover {
     cursor: col-resize;
 }
+
+.mde-preview-content {
+    text-align: left;
+}
