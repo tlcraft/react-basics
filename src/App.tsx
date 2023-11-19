@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import Body from './components/page-layout/body';
 import Footer from './components/page-layout/footer';
 import Header from './components/page-layout/header';
@@ -17,6 +17,7 @@ function App() {
 
   const navigate = useNavigate();
   const [darkMode, setDarkMode] = useState(true);
+  const MessageContext = createContext("Context Message");
 
   const headerProps = {
     navigateToStaticPage: () => navigate('/'),
