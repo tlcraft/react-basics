@@ -12,13 +12,12 @@ import ScratchPad from './components/scratch-pad/scratch-pad';
 import Notes from './components/notes/notes';
 import Tenzies from './components/tenzies/tenzies';
 
+const MessageContext = createContext("Context Example");
 
 function App() {
-
   const navigate = useNavigate();
   const [darkMode, setDarkMode] = useState(true);
-  const MessageContext = createContext("Context Message");
-
+  
   const headerProps = {
     navigateToStaticPage: () => navigate('/'),
     navigateToBody: () => navigate('/body'),
@@ -45,7 +44,7 @@ function App() {
   }, [darkMode]);
 
   return (
-    <>
+    <MessageContext.Provider value="Context Example">
       <div className={ darkMode ? "dark-mode App" : "App" }>
         <Header {...headerProps}/>
         <Routes>
@@ -61,7 +60,7 @@ function App() {
         <div className="footer-spacing"></div>
       </div>
       <Footer />
-    </>
+    </MessageContext.Provider>
   );
 }
 
