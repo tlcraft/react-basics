@@ -12,7 +12,7 @@ import ScratchPad from './components/scratch-pad/scratch-pad';
 import Notes from './components/notes/notes';
 import Tenzies from './components/tenzies/tenzies';
 
-const MessageContext = createContext("Context Example");
+export const MessageContext = createContext("Context Example");
 
 function App() {
   const navigate = useNavigate();
