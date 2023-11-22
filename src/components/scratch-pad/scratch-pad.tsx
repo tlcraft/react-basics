@@ -1,11 +1,14 @@
 import './scratch-pad.css';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Box } from './box';
 import { boxes } from './boxes';
 import { StarWarsData } from './star-wars-data';
 import { WindowWidth } from './window-width';
+import { MessageContext } from '../../App';
 
 function ScratchPad() {
+    const message = useContext(MessageContext);
+
     const [isShown, setIsShown] = useState(false);
 
     const [squares, setSquares] = useState(boxes);
@@ -277,6 +280,7 @@ function ScratchPad() {
             { !loadingStarWarsData && <p>Mass: {starWarsData.mass}</p> }
             <button onClick={() => handleShowWidthToggle()}>Toggle</button>
             { showWindowWidth && <WindowWidth></WindowWidth> }
+            <p>{ message }</p>
         </>
     )
 }
