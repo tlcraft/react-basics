@@ -95,3 +95,10 @@ VRBO Photo References:
 - [Wedding Photo source](https://scrimba-airbnb-page.vercel.app/static/media/wedding-photography.de6d8e47cc4f6902350d.png)
 - [Mountain Bike source](https://scrimba-airbnb-page.vercel.app/static/media/mountain-biking.4a10cddcb175d2ec7128.png)
 - [Star Icon](https://scrimba-airbnb-page.vercel.app)
+
+### Notes
+
+useContext references:
+
+- [useContext](https://react.dev/reference/react/useContext)
+- [A Guide to React Context and useContext() Hook](https://dmitripavlutin.com/react-context-and-usecontext/)
