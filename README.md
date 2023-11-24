@@ -102,3 +102,7 @@ useContext references:
 
 - [useContext](https://react.dev/reference/react/useContext)
 - [A Guide to React Context and useContext() Hook](https://dmitripavlutin.com/react-context-and-usecontext/)
+
+Reducer references:
+- [useReducer](https://react.dev/reference/react/useReducer)
+- [dispatch](https://react.dev/reference/react/useReducer#dispatch)
