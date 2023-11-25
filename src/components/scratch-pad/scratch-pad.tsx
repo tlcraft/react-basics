@@ -1,13 +1,28 @@
 import './scratch-pad.css';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { Box } from './box';
 import { boxes } from './boxes';
 import { StarWarsData } from './star-wars-data';
 import { WindowWidth } from './window-width';
 import { MessageContext } from '../../App';
 
+enum ActionType {
+    Answer = 1
+};
+
+function reducer(state: { answer: number }, action: ActionType) {
+    switch(action) {
+        case ActionType.Answer:
+            state = { ...state, answer: state.answer + 1 };
+            return state;
+        default:
+            throw new Error("Action not supported.");
+    }
+}
+
 function ScratchPad() {
     const message = useContext(MessageContext);
+    const [state, dispatch] = useReducer(reducer, { answer: 42 });
 
     const [isShown, setIsShown] = useState(false);
 
@@ -280,7 +295,8 @@ function ScratchPad() {
             { !loadingStarWarsData && <p>Mass: {starWarsData.mass}</p> }
             <button onClick={() => handleShowWidthToggle()}>Toggle</button>
             { showWindowWidth && <WindowWidth></WindowWidth> }
-            <p>{ message }</p>
+            <p>Conext: { message }</p>
+            <p>State: { state.answer }</p>
         </>
     )
 }
