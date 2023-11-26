@@ -152,6 +152,10 @@ function ScratchPad() {
         setShowWindowWidth(prevValue => !prevValue);
     };
 
+    const handleReducerClick = () => {
+        dispatch(ActionType.Answer);
+    };
+
     return (
         <>
             <h1>Scratch Pad for React Concepts</h1>
@@ -296,6 +300,7 @@ function ScratchPad() {
             <button onClick={() => handleShowWidthToggle()}>Toggle</button>
             { showWindowWidth && <WindowWidth></WindowWidth> }
             <p>Conext: { message }</p>
+            <button onClick={() => handleReducerClick()}>Test Reducer</button>
             <p>State: { state.answer }</p>
         </>
     )
