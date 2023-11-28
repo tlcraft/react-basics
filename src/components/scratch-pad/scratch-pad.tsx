@@ -7,13 +7,17 @@ import { WindowWidth } from './window-width';
 import { MessageContext } from '../../App';
 
 enum ActionType {
-    Answer = 1
+    Answer = 1,
+    Reset = 2
 };
 
 function reducer(state: { answer: number }, action: ActionType) {
     switch(action) {
         case ActionType.Answer:
             state = { ...state, answer: state.answer + 1 };
+            return state;
+        case ActionType.Reset:
+            state = { ...state, answer: 42 };
             return state;
         default:
             throw new Error("Action not supported.");
@@ -154,6 +158,10 @@ function ScratchPad() {
 
     const handleReducerClick = () => {
         dispatch(ActionType.Answer);
+    };
+
+    const handleReducerResetClick = () => {
+        dispatch(ActionType.Reset);
     };
 
     return (
@@ -301,6 +309,7 @@ function ScratchPad() {
             { showWindowWidth && <WindowWidth></WindowWidth> }
             <p>Conext: { message }</p>
             <button onClick={() => handleReducerClick()}>Test Reducer</button>
+            <button onClick={() => handleReducerResetClick()}>Reset</button>
             <p>State: { state.answer }</p>
         </>
     )
