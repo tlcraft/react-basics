@@ -6,6 +6,7 @@
 - [A Complete Guide to useEffect by Dan Abramov](https://overreacted.io/a-complete-guide-to-useeffect/)
 - [React Tutorial: An Overview and Walkthrough by Tania Rascia](https://www.taniarascia.com/getting-started-with-react/)
 - [Scrimba - Learn React for free with Bob Ziroll](https://scrimba.com/learn/learnreact)
+- [Scrimba - Learn Class Components in React with Bob Ziroll](https://scrimba.com/learn/classcomponents)
 - [ECMAScript Proposals](https://www.proposals.es/)
 
 
