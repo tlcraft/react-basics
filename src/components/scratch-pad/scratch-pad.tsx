@@ -8,13 +8,17 @@ import { MessageContext } from '../../App';
 
 enum ActionType {
     Answer = 1,
-    Reset = 2
+    Reset = 2,
+    Decrement = 3
 };
 
 function reducer(state: { answer: number }, action: ActionType) {
     switch(action) {
         case ActionType.Answer:
             state = { ...state, answer: state.answer + 1 };
+            return state;
+        case ActionType.Decrement:
+            state = { ...state, answer: state.answer - 1 };
             return state;
         case ActionType.Reset:
             state = { ...state, answer: 42 };
@@ -158,6 +162,10 @@ function ScratchPad() {
 
     const handleReducerClick = () => {
         dispatch(ActionType.Answer);
+    };
+
+    const handleReducerDecrementClick = () => {
+        dispatch(ActionType.Decrement);
     };
 
     const handleReducerResetClick = () => {
@@ -309,6 +317,7 @@ function ScratchPad() {
             { showWindowWidth && <WindowWidth></WindowWidth> }
             <p>Conext: { message }</p>
             <button onClick={() => handleReducerClick()}>Test Reducer</button>
+            <button onClick={() => handleReducerDecrementClick()}>Decrement</button>
             <button onClick={() => handleReducerResetClick()}>Reset</button>
             <p>State: { state.answer }</p>
         </>
