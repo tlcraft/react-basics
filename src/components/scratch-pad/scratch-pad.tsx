@@ -7,21 +7,21 @@ import { WindowWidth } from './window-width';
 import { MessageContext } from '../../App';
 
 enum ActionType {
-    Answer = 1,
+    Increment = 1,
     Reset = 2,
     Decrement = 3
 };
 
-function reducer(state: { answer: number }, action: ActionType) {
+function reducer(state: { count: number }, action: ActionType) {
     switch(action) {
-        case ActionType.Answer:
-            state = { ...state, answer: state.answer + 1 };
+        case ActionType.Increment:
+            state = { ...state, count: state.count + 1 };
             return state;
         case ActionType.Decrement:
-            state = { ...state, answer: state.answer - 1 };
+            state = { ...state, count: state.count - 1 };
             return state;
         case ActionType.Reset:
-            state = { ...state, answer: 42 };
+            state = { ...state, count: 42 };
             return state;
         default:
             throw new Error("Action not supported.");
@@ -30,7 +30,7 @@ function reducer(state: { answer: number }, action: ActionType) {
 
 function ScratchPad() {
     const message = useContext(MessageContext);
-    const [state, dispatch] = useReducer(reducer, { answer: 42 });
+    const [state, dispatch] = useReducer(reducer, { count: 42 });
 
     const [isShown, setIsShown] = useState(false);
 
@@ -160,8 +160,8 @@ function ScratchPad() {
         setShowWindowWidth(prevValue => !prevValue);
     };
 
-    const handleReducerClick = () => {
-        dispatch(ActionType.Answer);
+    const handleReducerIncrementClick = () => {
+        dispatch(ActionType.Increment);
     };
 
     const handleReducerDecrementClick = () => {
@@ -316,10 +316,10 @@ function ScratchPad() {
             <button onClick={() => handleShowWidthToggle()}>Toggle</button>
             { showWindowWidth && <WindowWidth></WindowWidth> }
             <p>Conext: { message }</p>
-            <button onClick={() => handleReducerClick()}>Test Reducer</button>
+            <button onClick={() => handleReducerIncrementClick()}>Increment</button>
             <button onClick={() => handleReducerDecrementClick()}>Decrement</button>
             <button onClick={() => handleReducerResetClick()}>Reset</button>
-            <p>State: { state.answer }</p>
+            <p>State: { state.count }</p>
         </>
     )
 }
