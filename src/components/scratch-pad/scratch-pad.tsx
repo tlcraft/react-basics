@@ -15,13 +15,13 @@ enum ActionType {
 function reducer(state: { count: number }, action: ActionType) {
     switch(action) {
         case ActionType.Increment:
-            state = { ...state, count: state.count + 1 };
+            state = { count: state.count + 1 };
             return state;
         case ActionType.Decrement:
-            state = { ...state, count: state.count - 1 };
+            state = { count: state.count - 1 };
             return state;
         case ActionType.Reset:
-            state = { ...state, count: 42 };
+            state = { count: 42 };
             return state;
         default:
             throw new Error("Action not supported.");
