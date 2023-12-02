@@ -319,7 +319,7 @@ function ScratchPad() {
             <button onClick={() => handleReducerIncrementClick()}>Increment</button>
             <button onClick={() => handleReducerDecrementClick()}>Decrement</button>
             <button onClick={() => handleReducerResetClick()}>Reset</button>
-            <p>State: { state.count }</p>
+            <p>Count: { state.count }</p>
         </>
     )
 }
