@@ -9,7 +9,8 @@ import { MessageContext } from '../../App';
 enum ActionType {
     Increment = 1,
     Reset = 2,
-    Decrement = 3
+    Decrement = 3,
+    Set = 4
 };
 
 function reducer(state: { count: number }, action: ActionType) {
@@ -23,10 +24,19 @@ function reducer(state: { count: number }, action: ActionType) {
         case ActionType.Reset:
             state = { count: 42 };
             return state;
+        case ActionType.Set:
+            state = { count: getCountInput(state.count) }
+            return state;
         default:
             throw new Error("Action not supported.");
     }
 }
+
+const getCountInput = (currentCount: number) => {
+    const inputElement = document.getElementById('set-count') as HTMLInputElement;
+    const count = +inputElement.value || currentCount;
+    return count;
+};
 
 function ScratchPad() {
     const message = useContext(MessageContext);
@@ -170,6 +180,10 @@ function ScratchPad() {
 
     const handleReducerResetClick = () => {
         dispatch(ActionType.Reset);
+    };
+
+    const handleCountOverride = () => {
+        dispatch(ActionType.Set);
     };
 
     return (
@@ -319,6 +333,7 @@ function ScratchPad() {
             <button onClick={() => handleReducerIncrementClick()}>Increment</button>
             <button onClick={() => handleReducerDecrementClick()}>Decrement</button>
             <button onClick={() => handleReducerResetClick()}>Reset</button>
+            <input id="set-count" type="number" name="count" placeholder="42" value={state.count} onChange={handleCountOverride} />
             <p>Count: { state.count }</p>
         </>
     )
