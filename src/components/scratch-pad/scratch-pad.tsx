@@ -1,11 +1,47 @@
 import './scratch-pad.css';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { Box } from './box';
 import { boxes } from './boxes';
 import { StarWarsData } from './star-wars-data';
 import { WindowWidth } from './window-width';
+import { MessageContext } from '../../App';
+
+enum ActionType {
+    Increment = 1,
+    Reset = 2,
+    Decrement = 3,
+    Set = 4
+};
+
+function reducer(state: { count: number }, action: ActionType) {
+    switch(action) {
+        case ActionType.Increment:
+            state = { count: state.count + 1 };
+            return state;
+        case ActionType.Decrement:
+            state = { count: state.count - 1 };
+            return state;
+        case ActionType.Reset:
+            state = { count: 42 };
+            return state;
+        case ActionType.Set:
+            state = { count: getCountInput(state.count) }
+            return state;
+        default:
+            throw new Error("Action not supported.");
+    }
+}
+
+const getCountInput = (currentCount: number) => {
+    const inputElement = document.getElementById('set-count') as HTMLInputElement;
+    const count = +inputElement.value || currentCount;
+    return count;
+};
 
 function ScratchPad() {
+    const message = useContext(MessageContext);
+    const [state, dispatch] = useReducer(reducer, { count: 42 });
+
     const [isShown, setIsShown] = useState(false);
 
     const [squares, setSquares] = useState(boxes);
@@ -132,6 +168,22 @@ function ScratchPad() {
     const [showWindowWidth, setShowWindowWidth] = useState(true);
     const handleShowWidthToggle = () => {
         setShowWindowWidth(prevValue => !prevValue);
+    };
+
+    const handleReducerIncrementClick = () => {
+        dispatch(ActionType.Increment);
+    };
+
+    const handleReducerDecrementClick = () => {
+        dispatch(ActionType.Decrement);
+    };
+
+    const handleReducerResetClick = () => {
+        dispatch(ActionType.Reset);
+    };
+
+    const handleCountOverride = () => {
+        dispatch(ActionType.Set);
     };
 
     return (
@@ -277,6 +329,12 @@ function ScratchPad() {
             { !loadingStarWarsData && <p>Mass: {starWarsData.mass}</p> }
             <button onClick={() => handleShowWidthToggle()}>Toggle</button>
             { showWindowWidth && <WindowWidth></WindowWidth> }
+            <p>Conext: { message }</p>
+            <button onClick={() => handleReducerIncrementClick()}>Increment</button>
+            <button onClick={() => handleReducerDecrementClick()}>Decrement</button>
+            <button onClick={() => handleReducerResetClick()}>Reset</button>
+            <input id="set-count" type="number" name="count" placeholder="42" value={state.count} onChange={handleCountOverride} />
+            <p>Count: { state.count }</p>
         </>
     )
 }

@@ -6,6 +6,7 @@
 - [A Complete Guide to useEffect by Dan Abramov](https://overreacted.io/a-complete-guide-to-useeffect/)
 - [React Tutorial: An Overview and Walkthrough by Tania Rascia](https://www.taniarascia.com/getting-started-with-react/)
 - [Scrimba - Learn React for free with Bob Ziroll](https://scrimba.com/learn/learnreact)
+- [Scrimba - Learn Class Components in React with Bob Ziroll](https://scrimba.com/learn/classcomponents)
 - [ECMAScript Proposals](https://www.proposals.es/)
 
 
@@ -95,3 +96,14 @@ VRBO Photo References:
 - [Wedding Photo source](https://scrimba-airbnb-page.vercel.app/static/media/wedding-photography.de6d8e47cc4f6902350d.png)
 - [Mountain Bike source](https://scrimba-airbnb-page.vercel.app/static/media/mountain-biking.4a10cddcb175d2ec7128.png)
 - [Star Icon](https://scrimba-airbnb-page.vercel.app)
+
+### Notes
+
+useContext references:
+
+- [useContext](https://react.dev/reference/react/useContext)
+- [A Guide to React Context and useContext() Hook](https://dmitripavlutin.com/react-context-and-usecontext/)
+
+Reducer references:
+- [useReducer](https://react.dev/reference/react/useReducer)
+- [dispatch](https://react.dev/reference/react/useReducer#dispatch)
